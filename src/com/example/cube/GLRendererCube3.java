@@ -389,6 +389,18 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
     		return null;
     }
     
+    public void rotateUpViewLeft3() {
+    	myCube3.rotateUpViewLeft();
+    }
+    public void rotateDownViewLeft3() {
+    	myCube3.rotateDownViewLeft();
+    }
+    public void rotateUpViewRight3() {
+    	myCube3.rotateUpViewRight();
+    }
+    public void rotateDownViewRight3() {
+    	myCube3.rotateDownViewRight();
+    }
     public void rotateRightCube3(String faceToRotate){
     	myCube3.rotateRight(faceToRotate);
     }

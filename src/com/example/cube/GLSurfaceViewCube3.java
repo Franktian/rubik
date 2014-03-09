@@ -169,5 +169,30 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
     	return true;
     }
     
+    public void onRotateLeft() {
+    	for (int i = 0; i < 3; i++) {
+    		// Rotate the colors on the side
+    		mRenderer.rotateLeftCube3("right1");
+        	mRenderer.rotateLeftCube3("right4");
+        	mRenderer.rotateLeftCube3("right7");
+    	}
+    	mRenderer.rotateUpViewLeft3();
+    	mRenderer.rotateDownViewLeft3();
+    	
+    	requestRender();
+    }
+    
+    public void onRotateRight() {
+    	for (int i = 0; i < 3; i++) {
+    		// Rotate the colors on the side
+    		mRenderer.rotateRightCube3("right1");
+        	mRenderer.rotateRightCube3("right4");
+        	mRenderer.rotateRightCube3("right7");
+    	}
+    	mRenderer.rotateUpViewRight3();
+    	mRenderer.rotateDownViewRight3();
+    	
+    	requestRender();
+    }
 
 }

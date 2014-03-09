@@ -180,6 +180,102 @@ public class Cube3 {
 		else if(faceToRotate.equals("front3"))
 			this.front3.rotateDown();
 	}
+	
+	public void rotateUpViewLeft () {
+		String temp1 = this.up1.getColor();
+		this.up1.setColor(this.up7.getColor());
+		
+		String temp2 = this.up2.getColor();
+		this.up2.setColor(this.up4.getColor());
+		
+		String temp3 = this.up3.getColor();
+		this.up3.setColor(temp1);
+		
+		String temp6 = this.up6.getColor();
+		this.up6.setColor(temp2);
+		
+		String temp9 = this.up9.getColor();
+		this.up9.setColor(temp3);
+		
+		String temp8 = this.up8.getColor();
+		this.up8.setColor(temp6);
+		
+		this.up7.setColor(temp9);
+		
+		this.up4.setColor(temp8);
+	}
+	
+	public void rotateDownViewLeft () {
+		String temp1 = this.down1.getColor();
+		this.down1.setColor(this.down7.getColor());
+		
+		String temp2 = this.down2.getColor();
+		this.down2.setColor(this.down4.getColor());
+		
+		String temp3 = this.down3.getColor();
+		this.down3.setColor(temp1);
+		
+		String temp6 = this.down6.getColor();
+		this.down6.setColor(temp2);
+		
+		String temp9 = this.down9.getColor();
+		this.down9.setColor(temp3);
+		
+		String temp8 = this.down8.getColor();
+		this.down8.setColor(temp6);
+		
+		this.down7.setColor(temp9);
+		
+		this.down4.setColor(temp8);
+	}
+	
+	public void rotateUpViewRight () {
+		String temp1 = this.up1.getColor();
+		this.up1.setColor(this.up3.getColor());
+		
+		String temp4 = this.up4.getColor();
+		this.up4.setColor(this.up2.getColor());
+		
+		String temp7 = this.up7.getColor();
+		this.up7.setColor(temp1);
+		
+		String temp8 = this.up8.getColor();
+		this.up8.setColor(temp4);
+		
+		String temp9 = this.up9.getColor();
+		this.up9.setColor(temp7);
+		
+		String temp6 = this.up6.getColor();
+		this.up6.setColor(temp8);
+
+		this.up3.setColor(temp9);
+
+		this.up2.setColor(temp6);
+	}
+	
+	public void rotateDownViewRight () {
+		String temp1 = this.down1.getColor();
+		this.down1.setColor(this.down3.getColor());
+		
+		String temp4 = this.down4.getColor();
+		this.down4.setColor(this.down2.getColor());
+		
+		String temp7 = this.down7.getColor();
+		this.down7.setColor(temp1);
+		
+		String temp8 = this.down8.getColor();
+		this.down8.setColor(temp4);
+		
+		String temp9 = this.down9.getColor();
+		this.down9.setColor(temp7);
+		
+		String temp6 = this.down6.getColor();
+		this.down6.setColor(temp8);
+
+		this.down3.setColor(temp9);
+
+		this.down2.setColor(temp6);
+	}
 
 	
 	/*
