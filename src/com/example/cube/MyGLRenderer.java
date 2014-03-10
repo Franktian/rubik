@@ -345,6 +345,10 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
     public void rotateDownViewRight2 () {
     	myCube2.rotateDownViewRight();
     }
+    
+    public void random2 () {
+    	myCube2.random();
+    }
     public void on_change_vertical_left(){
     	myCube.a.setAdj(myCube.c, myCube.f, myCube.d, myCube.b); // white
     	myCube.b.setAdj(myCube.f, myCube.c, myCube.e, myCube.a); // red
