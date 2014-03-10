@@ -96,7 +96,55 @@ public class Cube2 {
 			this.b2.rotateDown();	
 		else if(faceToRotate.equals("a2"))
 			this.a2.rotateDown();
-	}	
+	}
+	public void rotateUpViewLeft () {
+		String temp1 = this.c1.getColor();
+		this.c1.setColor(this.c3.getColor());
+		
+		String temp2 = this.c2.getColor();
+		this.c2.setColor(temp1);
+		
+		String temp3 = this.c3.getColor();
+		this.c3.setColor(temp2);
+		
+		this.c4.setColor(temp3);
+	}
+	public void rotateDownViewLeft () {
+		String temp1 = this.f1.getColor();
+		this.f1.setColor(this.f3.getColor());
+		
+		String temp2 = this.f2.getColor();
+		this.f2.setColor(temp1);
+		
+		String temp3 = this.f3.getColor();
+		this.f3.setColor(temp2);
+		
+		this.f4.setColor(temp3);
+	}
+	public void rotateUpViewRight () {
+		String temp1 = this.c1.getColor();
+		this.c1.setColor(this.c2.getColor());
+		
+		String temp3 = this.c3.getColor();
+		this.c3.setColor(temp1);
+		
+		String temp4 = this.c4.getColor();
+		this.c4.setColor(temp3);
+		
+		this.c2.setColor(temp4);
+	}
+	public void rotateDownViewRight () {
+		String temp1 = this.f1.getColor();
+		this.f1.setColor(this.f2.getColor());
+		
+		String temp3 = this.f3.getColor();
+		this.f3.setColor(temp1);
+		
+		String temp4 = this.f4.getColor();
+		this.f4.setColor(temp3);
+		
+		this.f2.setColor(temp4);
+	}
 	/*
 
 	public void display(){

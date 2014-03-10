@@ -155,5 +155,23 @@ public class MyGLSurfaceView extends GLSurfaceView {
     	return true;
     }
     
+    public void onRotateLeft () {
+    	for (int i = 0; i < 2; i++) {
+    		mRenderer.rotateLeftCube2("a1");
+    		mRenderer.rotateLeftCube2("a3");
+    	}
+    	mRenderer.rotateUpViewLeft2();
+    	mRenderer.rotateDownViewLeft2();
+    }
+    
+    public void onRotateRight () {
+    	for (int i = 0; i < 2; i++) {
+    		mRenderer.rotateRightCube2("a1");
+    		mRenderer.rotateRightCube2("a3");
+    	}
+    	mRenderer.rotateUpViewRight2();
+    	mRenderer.rotateUpViewRight2();
+    }
+    
 
 }
