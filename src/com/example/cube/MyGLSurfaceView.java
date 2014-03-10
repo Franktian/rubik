@@ -162,6 +162,8 @@ public class MyGLSurfaceView extends GLSurfaceView {
     	}
     	mRenderer.rotateUpViewLeft2();
     	mRenderer.rotateDownViewLeft2();
+    	
+    	requestRender();
     }
     
     public void onRotateRight () {
@@ -171,7 +173,14 @@ public class MyGLSurfaceView extends GLSurfaceView {
     	}
     	mRenderer.rotateUpViewRight2();
     	mRenderer.rotateUpViewRight2();
+    	
+    	requestRender();
     }
     
+    public void onRandom () {
+    	mRenderer.random2();
+    	
+    	requestRender();
+    }
 
 }

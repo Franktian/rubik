@@ -1,5 +1,5 @@
 package com.example.cube;
-
+import java.util.*;
 public class Cube2 {
 	public Face3 a1 = new Face3();
 	public Face3 b1 = new Face3();
@@ -144,6 +144,121 @@ public class Cube2 {
 		this.f4.setColor(temp3);
 		
 		this.f2.setColor(temp4);
+	}
+	public void random () {
+		Random generator = new Random();
+		
+		int random = generator.nextInt(3);
+		switch (random) {
+		case 0:
+			// up
+			for (int i = 0; i < 2; i++) {
+				this.a1.rotateUp();
+			}
+			break;
+		case 1:
+			//down
+			for (int i = 0; i < 2; i++) {
+				this.a1.rotateDown();
+			}
+			break;
+		case 2:
+			// left
+			for (int i = 0; i < 2; i++) {
+				this.a1.rotateLeft();
+			}
+			break;
+		case 3:
+			// right
+			for (int i = 0; i < 2; i++) {
+				this.a1.rotateRight();
+			}
+			break;
+		}
+		
+		random = generator.nextInt(3);
+		switch (random) {
+		case 0:
+			// up
+			for (int i = 0; i < 2; i++) {
+				this.a2.rotateUp();
+			}
+			break;
+		case 1:
+			//down
+			for (int i = 0; i < 2; i++) {
+				this.a2.rotateDown();
+			}
+			break;
+		case 2:
+			// left
+			for (int i = 0; i < 2; i++) {
+				this.a2.rotateLeft();
+			}
+			break;
+		case 3:
+			// right
+			for (int i = 0; i < 2; i++) {
+				this.a2.rotateRight();
+			}
+			break;
+		}
+		
+		random = generator.nextInt(3);
+		switch (random) {
+		case 0:
+			// up
+			for (int i = 0; i < 2; i++) {
+				this.a3.rotateUp();
+			}
+			break;
+		case 1:
+			//down
+			for (int i = 0; i < 2; i++) {
+				this.a3.rotateDown();
+			}
+			break;
+		case 2:
+			// left
+			for (int i = 0; i < 2; i++) {
+				this.a3.rotateLeft();
+			}
+			break;
+		case 3:
+			// right
+			for (int i = 0; i < 2; i++) {
+				this.a3.rotateRight();
+			}
+			break;
+		}
+		
+		random = generator.nextInt(3);
+		switch (random) {
+		case 0:
+			// up
+			for (int i = 0; i < 2; i++) {
+				this.a4.rotateUp();
+			}
+			break;
+		case 1:
+			//down
+			for (int i = 0; i < 2; i++) {
+				this.a4.rotateDown();
+			}
+			break;
+		case 2:
+			// left
+			for (int i = 0; i < 2; i++) {
+				this.a4.rotateLeft();
+			}
+			break;
+		case 3:
+			// right
+			for (int i = 0; i < 2; i++) {
+				this.a4.rotateRight();
+			}
+			break;
+		}
 	}
 	/*
 
