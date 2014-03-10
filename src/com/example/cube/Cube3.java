@@ -1,5 +1,5 @@
 package com.example.cube;
-
+import java.util.*;
 public class Cube3 {
 	public Face3 front1 = new Face3();
 	public Face3 back1 = new Face3();
@@ -275,6 +275,262 @@ public class Cube3 {
 		this.down3.setColor(temp9);
 
 		this.down2.setColor(temp6);
+	}
+	
+	public void random () {
+		Random generator = new Random();
+		int random = generator.nextInt(3);
+		switch (random) {
+		case 0:
+			// up
+			for (int i = 0; i < 3; i++) {
+				this.right1.rotateUp();
+			}
+			break;
+		case 1:
+			// down
+			for (int i = 0; i < 3; i++) {
+				this.right1.rotateDown();
+			}
+			break;
+		case 2:
+			// left
+			for (int i = 0; i < 3; i++) {
+				this.right1.rotateLeft();
+			}
+			break;
+		case 3:
+			// right
+			for (int i = 0; i < 3; i++) {
+				this.right1.rotateRight();
+			}
+			break;
+		}
+		
+
+		random = generator.nextInt(3);
+		switch (random) {
+		case 0:
+			// up
+			for (int i = 0; i < 3; i++) {
+				this.right2.rotateUp();
+			}
+			break;
+		case 1:
+			// down
+			for (int i = 0; i < 3; i++) {
+				this.right2.rotateDown();
+			}
+			break;
+		case 2:
+			// left
+			for (int i = 0; i < 3; i++) {
+				this.right2.rotateLeft();
+			}
+			break;
+		case 3:
+			// right
+			for (int i = 0; i < 3; i++) {
+				this.right2.rotateRight();
+			}
+			break;
+		}
+		
+		random = generator.nextInt(3);
+		switch (random) {
+		case 0:
+			// up
+			for (int i = 0; i < 3; i++) {
+				this.right3.rotateUp();
+			}
+			break;
+		case 1:
+			// down
+			for (int i = 0; i < 3; i++) {
+				this.right3.rotateDown();
+			}
+			break;
+		case 2:
+			// left
+			for (int i = 0; i < 3; i++) {
+				this.right3.rotateLeft();
+			}
+			break;
+		case 3:
+			// right
+			for (int i = 0; i < 3; i++) {
+				this.right3.rotateRight();
+			}
+			break;
+		}
+		
+		random = generator.nextInt(3);
+		switch (random) {
+		case 0:
+			// up
+			for (int i = 0; i < 3; i++) {
+				this.right4.rotateUp();
+			}
+			break;
+		case 1:
+			// down
+			for (int i = 0; i < 3; i++) {
+				this.right4.rotateDown();
+			}
+			break;
+		case 2:
+			// left
+			for (int i = 0; i < 3; i++) {
+				this.right4.rotateLeft();
+			}
+			break;
+		case 3:
+			// right
+			for (int i = 0; i < 3; i++) {
+				this.right4.rotateRight();
+			}
+			break;
+		}
+		
+		random = generator.nextInt(3);
+		switch (random) {
+		case 0:
+			// up
+			for (int i = 0; i < 3; i++) {
+				this.right5.rotateUp();
+			}
+			break;
+		case 1:
+			// down
+			for (int i = 0; i < 3; i++) {
+				this.right5.rotateDown();
+			}
+			break;
+		case 2:
+			// left
+			for (int i = 0; i < 3; i++) {
+				this.right5.rotateLeft();
+			}
+			break;
+		case 3:
+			// right
+			for (int i = 0; i < 3; i++) {
+				this.right5.rotateRight();
+			}
+			break;
+		}
+		
+		random = generator.nextInt(3);
+		switch (random) {
+		case 0:
+			// up
+			for (int i = 0; i < 3; i++) {
+				this.right6.rotateUp();
+			}
+			break;
+		case 1:
+			// down
+			for (int i = 0; i < 3; i++) {
+				this.right6.rotateDown();
+			}
+			break;
+		case 2:
+			// left
+			for (int i = 0; i < 3; i++) {
+				this.right6.rotateLeft();
+			}
+			break;
+		case 3:
+			// right
+			for (int i = 0; i < 3; i++) {
+				this.right6.rotateRight();
+			}
+			break;
+		}
+		
+		random = generator.nextInt(3);
+		switch (random) {
+		case 0:
+			// up
+			for (int i = 0; i < 3; i++) {
+				this.right7.rotateUp();
+			}
+			break;
+		case 1:
+			// down
+			for (int i = 0; i < 3; i++) {
+				this.right7.rotateDown();
+			}
+			break;
+		case 2:
+			// left
+			for (int i = 0; i < 3; i++) {
+				this.right7.rotateLeft();
+			}
+			break;
+		case 3:
+			// right
+			for (int i = 0; i < 3; i++) {
+				this.right7.rotateRight();
+			}
+			break;
+		}
+		
+		random = generator.nextInt(3);
+		switch (random) {
+		case 0:
+			// up
+			for (int i = 0; i < 3; i++) {
+				this.right8.rotateUp();
+			}
+			break;
+		case 1:
+			// down
+			for (int i = 0; i < 3; i++) {
+				this.right8.rotateDown();
+			}
+			break;
+		case 2:
+			// left
+			for (int i = 0; i < 3; i++) {
+				this.right8.rotateLeft();
+			}
+			break;
+		case 3:
+			// right
+			for (int i = 0; i < 3; i++) {
+				this.right8.rotateRight();
+			}
+			break;
+		}
+		
+		random = generator.nextInt(3);
+		switch (random) {
+		case 0:
+			// up
+			for (int i = 0; i < 3; i++) {
+				this.right9.rotateUp();
+			}
+			break;
+		case 1:
+			// down
+			for (int i = 0; i < 3; i++) {
+				this.right9.rotateDown();
+			}
+			break;
+		case 2:
+			// left
+			for (int i = 0; i < 3; i++) {
+				this.right9.rotateLeft();
+			}
+			break;
+		case 3:
+			// right
+			for (int i = 0; i < 3; i++) {
+				this.right9.rotateRight();
+			}
+			break;
+		}
 	}
 
 	

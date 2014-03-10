@@ -194,5 +194,11 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
     	
     	requestRender();
     }
+    
+    public void onRandom() {
+    	mRenderer.random3();
+    	
+    	requestRender();
+    }
 
 }
