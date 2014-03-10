@@ -329,7 +329,22 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
     public void rotateDownCube2(String faceToRotate){
     	myCube2.rotateDown(faceToRotate);
     }
-
+    
+    public void rotateUpViewLeft2 () {
+    	myCube2.rotateUpViewLeft();
+    }
+    
+    public void rotateDownViewLeft2 () {
+    	myCube2.rotateDownViewLeft();
+    }
+    
+    public void rotateUpViewRight2 () {
+    	myCube2.rotateUpViewRight();
+    }
+    
+    public void rotateDownViewRight2 () {
+    	myCube2.rotateDownViewRight();
+    }
     public void on_change_vertical_left(){
     	myCube.a.setAdj(myCube.c, myCube.f, myCube.d, myCube.b); // white
     	myCube.b.setAdj(myCube.f, myCube.c, myCube.e, myCube.a); // red
