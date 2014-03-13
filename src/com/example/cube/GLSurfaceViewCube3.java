@@ -202,5 +202,16 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
     	
     	requestRender();
     }
-
+    
+    public void onRotateUpView () {
+    	for (int i = 0; i < 6; i++) {
+    		mRenderer.rotateUpCube3("front1");
+    		mRenderer.rotateUpCube3("front2");
+    		mRenderer.rotateUpCube3("front2");
+    	}
+    	mRenderer.rotateRightHalf3();
+    	mRenderer.rotateLeftHalf3();
+    	
+    	this.onRotateLeft();
+    }
 }
