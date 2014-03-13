@@ -297,6 +297,51 @@ public class Cube3 {
 		this.down2.setColor(temp6);
 	}
 	
+	public void rotateRightHalf() {
+		String temp1 = this.right1.getColor();
+		this.right1.setColor(this.right9.getColor());
+		
+		String temp2 = this.right2.getColor();
+		this.right2.setColor(this.right8.getColor());
+		
+		String temp3 = this.right3.getColor();
+		this.right3.setColor(this.right7.getColor());
+		
+		String temp6 = this.right6.getColor();
+		this.right6.setColor(this.right4.getColor());
+		
+		this.right9.setColor(temp1);
+		
+		this.right8.setColor(temp2);
+		
+		this.right7.setColor(temp3);
+		
+		this.right4.setColor(temp6);
+	}
+	
+	public void rotateLeftHalf() {
+		String temp1 = this.left1.getColor();
+		this.left1.setColor(this.left9.getColor());
+		
+		String temp2 = this.right2.getColor();
+		this.left2.setColor(this.left8.getColor());
+		
+		String temp3 = this.right3.getColor();
+		this.left3.setColor(this.left7.getColor());
+		
+		String temp6 = this.right6.getColor();
+		this.left6.setColor(this.left4.getColor());
+		
+		this.left9.setColor(temp1);
+		
+		this.left8.setColor(temp2);
+		
+		this.left7.setColor(temp3);
+		
+		this.left4.setColor(temp6);
+	}
+	
+	
 	public void random () {
 		Random generator = new Random();
 		int random = generator.nextInt(3);
