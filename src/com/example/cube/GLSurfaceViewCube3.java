@@ -17,7 +17,7 @@ package com.example.cube;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView;
-import android.util.Log;
+import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 /**
@@ -27,7 +27,7 @@ import android.view.MotionEvent;
  */
 public class GLSurfaceViewCube3 extends GLSurfaceView {
 
-    private final GLRendererCube3 mRenderer;
+    public static GLRendererCube3 mRenderer;
     private final float red[] = { 1.0f, 0.0f, 0.0f, 1.0f };
     private final float green[] = { 0.0f, 1.0f, 0.0f, 1.0f };
     private final float blue[] = { 0.0f, 0.0f, 1.0f, 1.0f };
@@ -35,9 +35,9 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
     private final float yellow[] = { 1.0f, 1.0f, 0.0f, 1.0f };
     private final float orange[] = { 1.0f, 0.5f, 0.0f, 1.0f };
     
-    public GLSurfaceViewCube3(Context context) {
-        super(context);
-
+    public GLSurfaceViewCube3(Context context, AttributeSet attrs) {
+        super(context,attrs);
+        
         // Create an OpenGL ES 2.0 context.
         setEGLContextClientVersion(2);
 
@@ -160,42 +160,44 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	mRenderer.rotateUpCube3("front3");
                 }
                 
-                
-                
+                if(mPreviousY >1100.0f && mPreviousX < getWidth()/2 - 150.0f)
+                	onRotateLeft();
+                if(mPreviousY >1100.0f && mPreviousX > getWidth()/2 + 150.0f)
+                	onRotateRight();
                 requestRender();
                 break;
         }
 
     	return true;
     }
-    
+
     public void onRotateLeft() {
+    	mRenderer.on_change_horizontal_cube3();
     	for (int i = 0; i < 3; i++) {
     		// Rotate the colors on the side
     		mRenderer.rotateLeftCube3("right1");
-        	mRenderer.rotateLeftCube3("right4");
-        	mRenderer.rotateLeftCube3("right7");
+    		mRenderer.rotateLeftCube3("right4");
+    		mRenderer.rotateLeftCube3("right7");
     	}
     	mRenderer.rotateUpViewLeft3();
     	mRenderer.rotateDownViewLeft3();
-    	
-    	requestRender();
     }
     
     public void onRotateRight() {
+    	mRenderer.on_change_horizontal_cube3();
     	for (int i = 0; i < 3; i++) {
     		// Rotate the colors on the side
     		mRenderer.rotateRightCube3("right1");
-        	mRenderer.rotateRightCube3("right4");
-        	mRenderer.rotateRightCube3("right7");
+    		mRenderer.rotateRightCube3("right4");
+    		mRenderer.rotateRightCube3("right7");
     	}
     	mRenderer.rotateUpViewRight3();
     	mRenderer.rotateDownViewRight3();
-    	
-    	requestRender();
     }
+
     
     public void onRandom() {
+    	mRenderer.on_change_horizontal_cube3();
     	mRenderer.random3();
     	
     	requestRender();

@@ -36,10 +36,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int cube2_button=0x7f080002;
-        public static final int cube3_button=0x7f080003;
+        public static final int back_button=0x7f080001;
+        public static final int cube2_button=0x7f080003;
+        public static final int cube3_button=0x7f080004;
         public static final int fullscreen_content_controls=0x7f080000;
-        public static final int textView1=0x7f080001;
+        public static final int textView1=0x7f080002;
     }
     public static final class layout {
         public static final int activity_cube3=0x7f030000;
@@ -48,6 +49,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class string {
         public static final int app_name=0x7f060000;
+        public static final int back=0x7f060008;
         public static final int cube2_button=0x7f060002;
         public static final int cube3_button=0x7f060003;
         public static final int dummy_button=0x7f060006;

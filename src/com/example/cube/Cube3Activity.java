@@ -1,7 +1,11 @@
 package com.example.cube;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 import com.example.cube.util.SystemUiHider;
 
@@ -12,17 +16,44 @@ import com.example.cube.util.SystemUiHider;
  * @see SystemUiHider
  */
 public class Cube3Activity extends Activity {
-    private GLSurfaceViewCube3 mGLView;
-
-
+	private Button leftButton;
+	private Button rightButton;
+	private Button backButton;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 		setContentView(R.layout.activity_cube3);
-        mGLView = new GLSurfaceViewCube3(this);
-        setContentView(mGLView);
+	//	leftButton = (Button) findViewById(R.id.left_button);
+	//	rightButton = (Button) findViewById(R.id.right_button);
+//		leftButton.setOnClickListener(leftView());
+	//	rightButton.setOnClickListener(rightView());
 	}
 	
+    private OnClickListener leftView() {
+        return new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	GLRendererCube3.myCube3.onRotateLeft();
+            //	GLSurfaceViewCube3.mRenderer.;
+            }
+        };
+    }
+    
+    private OnClickListener rightView() {
+        return new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	GLRendererCube3.myCube3.onRotateRight();
+            }
+        };
+    }
 
+    public void backView(View view) {
+		Intent intent = new Intent(this, StartActivity.class);
+	    startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+    }
 }

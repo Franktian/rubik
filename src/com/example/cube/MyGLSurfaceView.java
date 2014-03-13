@@ -17,7 +17,7 @@ package com.example.cube;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView;
-import android.util.Log;
+import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 /**
@@ -28,15 +28,9 @@ import android.view.MotionEvent;
 public class MyGLSurfaceView extends GLSurfaceView {
 
     private final MyGLRenderer mRenderer;
-    private final float red[] = { 1.0f, 0.0f, 0.0f, 1.0f };
-    private final float green[] = { 0.0f, 1.0f, 0.0f, 1.0f };
-    private final float blue[] = { 0.0f, 0.0f, 1.0f, 1.0f };
-    private final float white[] = { 1.0f, 1.0f, 1.0f, 1.0f };
-    private final float yellow[] = { 1.0f, 1.0f, 0.0f, 1.0f };
-    private final float orange[] = { 1.0f, 0.5f, 0.0f, 1.0f };
     
-    public MyGLSurfaceView(Context context) {
-        super(context);
+    public MyGLSurfaceView(Context context, AttributeSet attrs) {
+        super(context,attrs);
 
         // Create an OpenGL ES 2.0 context.
         setEGLContextClientVersion(2);
