@@ -44,20 +44,23 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
     private Square3_Right_Seven mSquare3_Right_Seven;
     private Square3_Right_Eight mSquare3_Right_Eight;
     private Square3_Right_Nine mSquare3_Right_Nine;
-    //Cube 2
+
+    private LeftView LeftView;
+    private RightView RightView;
+
     
     // mMVPMatrix is an abbreviation for "Model View Projection Matrix"
     private final float[] mMVPMatrix = new float[16];
     private final float[] mProjectionMatrix = new float[16];
     private final float[] mViewMatrix = new float[16];
-    private final float[] mRotationMatrix = new float[16];
+//    private final float[] mRotationMatrix = new float[16];
     private final float red[] = { 1.0f, 0.0f, 0.0f, 1.0f };
     private final float green[] = { 0.0f, 1.0f, 0.0f, 1.0f };
     private final float blue[] = { 0.0f, 0.0f, 1.0f, 1.0f };
     private final float white[] = { 1.0f, 1.0f, 1.0f, 1.0f };
     private final float yellow[] = { 1.0f, 1.0f, 0.0f, 1.0f };
     private final float orange[] = { 1.0f, 0.5f, 0.0f, 1.0f };
-    private Cube3 myCube3 = new Cube3();
+    public static Cube3 myCube3 = new Cube3();
 
     private float top_one_color[] = null;
     private float left_one_color[] = null;
@@ -89,7 +92,6 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
     
     @Override
     public void onSurfaceCreated(GL10 unused, EGLConfig config) {
-
         // Set the background frame color
         GLES20.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         
@@ -124,6 +126,9 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
         mSquare3_Right_Eight = new Square3_Right_Eight();        
         mSquare3_Right_Nine = new Square3_Right_Nine();        
 
+        LeftView = new LeftView();
+        RightView = new RightView();
+        
 		myCube3.front1 = new Face3("front1", "white");
 		myCube3.front2 = new Face3("front2", "white");
 		myCube3.front3 = new Face3("front3", "white");
@@ -196,7 +201,8 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
 				myCube3.front9,myCube3.back9,myCube3.left9,myCube3.right9,myCube3.up9,myCube3.down9
 			};
 		myCube3.initialize(face_array);
-		
+    	on_change_horizontal_cube3();
+
     }
 
     @Override
@@ -277,6 +283,8 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
         mSquare3_Right_Eight.draw(mMVPMatrix, right_eight_color);
         mSquare3_Right_Nine.draw(mMVPMatrix, right_nine_color);     
  		
+        LeftView.draw(mMVPMatrix,green);
+        RightView.draw(mMVPMatrix,yellow);
     }
 
     @Override

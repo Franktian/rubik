@@ -1,8 +1,9 @@
 package com.example.cube;
 
 import android.app.Activity;
-import android.opengl.GLSurfaceView;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.cube.util.SystemUiHider;
 
@@ -13,7 +14,6 @@ import com.example.cube.util.SystemUiHider;
  * @see SystemUiHider
  */
 public class MainPageActivity extends Activity {
-    private GLSurfaceView mGLView;
 
 
 	@Override
@@ -21,9 +21,14 @@ public class MainPageActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_main_page);
-        mGLView = new MyGLSurfaceView(this);
-        setContentView(mGLView);
 	}
-	
 
+    public void backView(View view) {
+		Intent intent = new Intent(this, StartActivity.class);
+	    startActivity(intent);
+    }
+	
+    @Override
+    public void onBackPressed() {
+    }
 }

@@ -67,7 +67,27 @@ public class Cube3 {
 	public Cube3(){
 		
 	}
-	
+    public void onRotateLeft() {
+    	for (int i = 0; i < 3; i++) {
+    		// Rotate the colors on the side
+    		rotateLeft("right1");
+        	 rotateLeft("right4");
+        	 rotateLeft("right7");
+    	}
+    	 rotateUpViewLeft();
+    	 rotateDownViewLeft();
+    }
+    
+    public void onRotateRight() {
+    	for (int i = 0; i < 3; i++) {
+    		// Rotate the colors on the side
+    		rotateRight("right1");
+        	rotateRight("right4");
+        	rotateRight("right7");
+    	}
+    	rotateUpViewRight();
+    	rotateDownViewRight();
+    }
 	public void initialize(Face3[] face_array){
 		this.front1 = face_array[0];
 		this.back1 = face_array[1];

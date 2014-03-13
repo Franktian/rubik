@@ -9,5 +9,6 @@
     <string name="title_activity_cube3">Cube3Activity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-
+    <string name="back">BACK</string>
+    
 </resources>
