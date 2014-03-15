@@ -159,12 +159,11 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	mRenderer.on_change_vertical_cube3();
                 	mRenderer.rotateUpCube3("front3");
                 }
-                
-                if(mPreviousY >1100.0f/1280*getHeight() && mPreviousX < getWidth()/2 - 150.0f/720*getWidth())
+                if(mPreviousY >900.0f/1280*getHeight() && dx < -100 && dy < 100)
                 	onRotateLeft();
-                if(mPreviousY >1100.0f/1280*getHeight() && mPreviousX > getWidth()/2 + 150.0f/720*getWidth())
+                if(mPreviousY > 900.0f/1280*getHeight() && dx >100 && dy < 100)
                 	onRotateRight();
-                if(mPreviousY <1100.0f/1280*getHeight() && mPreviousY > 900.0f/1280*getHeight() && mPreviousX > getWidth()/2 - 150.0f/720*getWidth() && mPreviousX < getWidth()/2+150.0f/720*getWidth())
+                if(mPreviousY > 900.0f/1280*getHeight() && dy < -100 && dx<100 && dx>-100)
                 	onRotateUpView();
 
                 requestRender();

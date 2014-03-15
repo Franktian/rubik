@@ -45,9 +45,6 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
     private Square3_Right_Eight mSquare3_Right_Eight;
     private Square3_Right_Nine mSquare3_Right_Nine;
 
-    private LeftView LeftView;
-    private RightView RightView;
-    private TopView TopView;
 
     
     // mMVPMatrix is an abbreviation for "Model View Projection Matrix"
@@ -127,9 +124,6 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
         mSquare3_Right_Eight = new Square3_Right_Eight();        
         mSquare3_Right_Nine = new Square3_Right_Nine();        
 
-        LeftView = new LeftView();
-        RightView = new RightView();
-        TopView = new TopView();
         
 		myCube3.front1 = new Face3("front1", "white");
 		myCube3.front2 = new Face3("front2", "white");
@@ -285,9 +279,7 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
         mSquare3_Right_Eight.draw(mMVPMatrix, right_eight_color);
         mSquare3_Right_Nine.draw(mMVPMatrix, right_nine_color);     
  		
-        LeftView.draw(mMVPMatrix,green);
-        RightView.draw(mMVPMatrix,yellow);
-        TopView.draw(mMVPMatrix,red);
+
     }
 
     @Override
