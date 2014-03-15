@@ -164,6 +164,9 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	onRotateLeft();
                 if(mPreviousY >1100.0f && mPreviousX > getWidth()/2 + 150.0f)
                 	onRotateRight();
+                if(mPreviousY <1100.0f && mPreviousY > 900.0f && mPreviousX > getWidth()/2 - 150.0f && mPreviousX < getWidth()/2+150.0f)
+                	onRotateUpView();
+
                 requestRender();
                 break;
         }
@@ -200,18 +203,18 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
     	mRenderer.on_change_horizontal_cube3();
     	mRenderer.random3();
     	
-    	requestRender();
     }
     
     public void onRotateUpView () {
+    	mRenderer.on_change_vertical_cube3();
     	for (int i = 0; i < 6; i++) {
     		mRenderer.rotateUpCube3("front1");
     		mRenderer.rotateUpCube3("front2");
-    		mRenderer.rotateUpCube3("front2");
+    		mRenderer.rotateUpCube3("front3");
     	}
     	mRenderer.rotateRightHalf3();
     	mRenderer.rotateLeftHalf3();
     	
-    	this.onRotateLeft();
+    	onRotateRight();
     }
 }

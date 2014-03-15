@@ -323,13 +323,13 @@ public class Cube3 {
 		String temp1 = this.left1.getColor();
 		this.left1.setColor(this.left9.getColor());
 		
-		String temp2 = this.right2.getColor();
+		String temp2 = this.left2.getColor();
 		this.left2.setColor(this.left8.getColor());
 		
-		String temp3 = this.right3.getColor();
+		String temp3 = this.left3.getColor();
 		this.left3.setColor(this.left7.getColor());
 		
-		String temp6 = this.right6.getColor();
+		String temp6 = this.left6.getColor();
 		this.left6.setColor(this.left4.getColor());
 		
 		this.left9.setColor(temp1);
