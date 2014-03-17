@@ -53,14 +53,39 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
     private float originX;
     private float originY;
     private float mPreviousX;
-    private float mPreviousY;   
+    private float mPreviousY;
+    
+    
+    /*public double d0 = 100/Math.sqrt(3);
+    public Boundary left1 = new Boundary(
+    		new Point((double)60.0f/720*getWidth(), (500.0f - 3*d0)/1280*getHeight()),  //upLeft
+    		new Point((double)160.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()), //upRight
+    		new Point((double)60.0f/720*getWidth(), (633.3f - 3*d0)/1280*getHeight()),  //botomLeft
+    		new Point((double)160.0f/720*getWidth(), (633.3f - 2*d0)/1280*getHeight()));//bottomRight
+    
+    public Boundary left2 = new Boundary(
+    		new Point((double)160.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()), // upLeft
+    		new Point((double)260.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()), // upRight
+    		new Point((double)160.0f/720*getWidth(), (633.3f - 2*d0)/1280*getHeight()),  // bottomLeft
+    		new Point((double)260.0f/720*getWidth(), (633.3f - d0)/1280*getHeight()));// bottomRight 
+    
+    public Boundary left3 = new Boundary(
+    		new Point((double)260.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()), // upLeft
+    		new Point((double)360.0f/720*getWidth(), ((double)500.0f)/1280*getHeight()), // upRight
+    		new Point((double)260.0f/720*getWidth(), (633.3f - d0)/1280*getHeight()),  // bottomLeft
+    		new Point((double)360.0f/720*getWidth(), ((double)633.3f)/1280*getHeight()));// bottomRight*/
+    
+    
+    
+    
+    
     @Override
     public boolean onTouchEvent(MotionEvent e) {
         // MotionEvent reports input details from the touch screen
         // and other input controls. In this case, you are only
         // interested in events where the touch position changed.
 
-
+    	
         switch (e.getAction()) {
         	case MotionEvent.ACTION_DOWN:
         		originX = e.getX();
@@ -71,11 +96,426 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
         	case MotionEvent.ACTION_MOVE:        		
                 float dx = e.getX() - originX;
                 float dy = e.getY() - originY;
-                double d0 = 100/Math.sqrt(3);
-                double d1 = 133.3f;
+                double d0 = 40.0;
                 
+                Point test = new Point((double)originX, (double)originY);
+                
+                Boundary left1 = new Boundary(
+                		new Point((double)60.0f/720*getWidth(), (500.0f - 3*d0)/1280*getHeight()),  //upLeft
+                		new Point((double)160.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()), //upRight
+                		new Point((double)160.0f/720*getWidth(), (633.3f - 2*d0)/1280*getHeight()),
+                		new Point((double)60.0f/720*getWidth(), (633.3f - 3*d0)/1280*getHeight())  //botomLeft
+                		);//bottomRight
+                Boundary left2 = new Boundary(
+                		new Point((double)160.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()), // upLeft
+                		new Point((double)260.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()), // upRight
+                		new Point((double)260.0f/720*getWidth(), (633.3f - d0)/1280*getHeight()),
+                		new Point((double)160.0f/720*getWidth(), (633.3f - 2*d0)/1280*getHeight())  // bottomLeft
+                		);// bottomRight 
+                Boundary left3 = new Boundary(
+                		new Point((double)260.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()), // upLeft
+                		new Point((double)360.0f/720*getWidth(), ((double)500.0f)/1280*getHeight()), // upRight
+                		new Point((double)360.0f/720*getWidth(), ((double)633.3f)/1280*getHeight()),
+                		new Point((double)260.0f/720*getWidth(), (633.3f - d0)/1280*getHeight())  // bottomLeft
+                		);// bottomRight
+                Boundary right1 = new Boundary(
+                		new Point((double)360.0f/720*getWidth(), ((double)500.0f)/1280*getHeight()), // upLeft
+                		new Point((double)460.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()), // upRight
+                		new Point((double)460.0f/720*getWidth(), (633.3f - d0)/1280*getHeight()),
+                		new Point((double)360.0f/720*getWidth(), ((double)633.3f)/1280*getHeight())  // bottomLeft
+                		);// bottomRight
+                Boundary right2 = new Boundary(
+                		new Point((double)460.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()), // upLeft
+                		new Point((double)560.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()), // upRight
+                		new Point((double)560.0f/720*getWidth(), (633.3f - 2*d0)/1280*getHeight()),
+                		new Point((double)460.0f/720*getWidth(), (633.3f - d0)/1280*getHeight())  // bottomLeft
+                		);// bottomRight
+                Boundary right3 = new Boundary(
+                		new Point((double)560.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()), // upLeft
+                		new Point((double)660.0f/720*getWidth(), (500.0f - 3*d0)/1280*getHeight()), // upRight
+                		new Point((double)660.0f/720*getWidth(), (633.3f - 3*d0)/1280*getHeight()),
+                		new Point((double)560.0f/720*getWidth(), (633.3f - 2*d0)/1280*getHeight())  // bottomLeft
+                		);// bottomRight
+                
+                
+                
+                Boundary left4 = new Boundary(
+                		new Point((double)60.0f/720*getWidth(), (633.3f - 3*d0)/1280*getHeight()),  //upLeft
+                		new Point((double)160.0f/720*getWidth(), (633.3f - 2*d0)/1280*getHeight()), //upRight
+                		new Point((double)160.0f/720*getWidth(), (766.6f - 2*d0)/1280*getHeight()),
+                		new Point((double)60.0f/720*getWidth(), (766.6f - 3*d0)/1280*getHeight())  //botomLeft
+                		);//bottomRight
+                Boundary left5 = new Boundary(
+                		new Point((double)160.0f/720*getWidth(), (633.3f - 2*d0)/1280*getHeight()), // upLeft
+                		new Point((double)260.0f/720*getWidth(), (633.3f - d0)/1280*getHeight()), // upRight
+                		new Point((double)260.0f/720*getWidth(), (766.6f - d0)/1280*getHeight()),
+                		new Point((double)160.0f/720*getWidth(), (766.6f - 2*d0)/1280*getHeight())  // bottomLeft
+                		);// bottomRight
+                Boundary left6 = new Boundary(
+                		new Point((double)260.0f/720*getWidth(), (633.3f - d0)/1280*getHeight()), // upLeft
+                		new Point((double)360.0f/720*getWidth(), ((double)633.3f)/1280*getHeight()), // upRight
+                		new Point((double)360.0f/720*getWidth(), ((double)766.6f)/1280*getHeight()),
+                		new Point((double)260.0f/720*getWidth(), (766.6f - d0)/1280*getHeight())  // bottomLeft
+                		);// bottomRight
+                Boundary right4 = new Boundary(
+                		new Point((double)360.0f/720*getWidth(), ((double)633.3f)/1280*getHeight()), // upLeft
+                		new Point((double)460.0f/720*getWidth(), (633.3f - d0)/1280*getHeight()), // upRight
+                		new Point((double)460.0f/720*getWidth(), (766.6f - d0)/1280*getHeight()),
+                		new Point((double)360.0f/720*getWidth(), ((double)766.6f)/1280*getHeight())  // bottomLeft
+                		);// bottomRight
+                Boundary right5 = new Boundary(
+                		new Point((double)460.0f/720*getWidth(), (633.3f - d0)/1280*getHeight()), // upLeft
+                		new Point((double)560.0f/720*getWidth(), (633.3f - 2*d0)/1280*getHeight()), // upRight
+                		new Point((double)560.0f/720*getWidth(), (766.6f - 2*d0)/1280*getHeight()),
+                		new Point((double)460.0f/720*getWidth(), (766.6f - d0)/1280*getHeight())  // bottomLeft
+                		);// bottomRight
+                Boundary right6 = new Boundary(
+                		new Point((double)560.0f/720*getWidth(), (633.3f - 2*d0)/1280*getHeight()), // upLeft
+                		new Point((double)660.0f/720*getWidth(), (633.3f - 3*d0)/1280*getHeight()), // upRight
+                		new Point((double)660.0f/720*getWidth(), (766.6f - 3*d0)/1280*getHeight()),
+                		new Point((double)560.0f/720*getWidth(), (766.6f - 2*d0)/1280*getHeight())  // bottomLeft
+                		);// bottomRight
+                
+                
+                
+                Boundary left7 = new Boundary(
+                		new Point((double)60.0f/720*getWidth(), (766.6f - 3*d0)/1280*getHeight()),  //upLeft
+                		new Point((double)160.0f/720*getWidth(), (766.6f - 2*d0)/1280*getHeight()), //upRight
+                		new Point((double)160.0f/720*getWidth(), (900.0f - 2*d0)/1280*getHeight()),
+                		new Point((double)60.0f/720*getWidth(), (900.0f - 3*d0)/1280*getHeight())  //botomLeft
+                		);//bottomRight
+                Boundary left8 = new Boundary(
+                		new Point((double)160.0f/720*getWidth(), (766.6f - 2*d0)/1280*getHeight()), // upLeft
+                		new Point((double)260.0f/720*getWidth(), (766.6f - d0)/1280*getHeight()), // upRight
+                		new Point((double)260.0f/720*getWidth(), (900.0f - d0)/1280*getHeight()),
+                		new Point((double)160.0f/720*getWidth(), (900.0f - 2*d0)/1280*getHeight())  // bottomLeft
+                		);// bottomRight
+                Boundary left9 = new Boundary(
+                		new Point((double)260.0f/720*getWidth(), (766.6f - d0)/1280*getHeight()), // upLeft
+                		new Point((double)360.0f/720*getWidth(), ((double)766.6f)/1280*getHeight()), // upRight
+                		new Point((double)360.0f/720*getWidth(), ((double)900.0f)/1280*getHeight()),
+                		new Point((double)260.0f/720*getWidth(), (900.0f - d0)/1280*getHeight())  // bottomLeft
+                		);// bottomRight
+                Boundary right7 = new Boundary(
+                		new Point((double)360.0f/720*getWidth(), ((double)766.6f)/1280*getHeight()), // upLeft
+                		new Point((double)460.0f/720*getWidth(), (766.6f - d0)/1280*getHeight()), // upRight
+                		new Point((double)460.0f/720*getWidth(), (900.9f - d0)/1280*getHeight()),
+                		new Point((double)360.0f/720*getWidth(), ((double)900.0f)/1280*getHeight())  // bottomLeft
+                		);// bottomRight
+                Boundary right8 = new Boundary(
+                		new Point((double)460.0f/720*getWidth(), (766.6f - d0)/1280*getHeight()), // upLeft
+                		new Point((double)560.0f/720*getWidth(), (766.6f - 2*d0)/1280*getHeight()), // upRight
+                		new Point((double)560.0f/720*getWidth(), (900.0f - 2*d0)/1280*getHeight()),
+                		new Point((double)460.0f/720*getWidth(), (900.0f - d0)/1280*getHeight())  // bottomLeft
+                		);// bottomRight
+                Boundary right9 = new Boundary(
+                		new Point((double)560.0f/720*getWidth(), (766.6f - 2*d0)/1280*getHeight()), // upLeft
+                		new Point((double)660.0f/720*getWidth(), (766.6f - 3*d0)/1280*getHeight()), // upRight
+                		new Point((double)660.0f/720*getWidth(), (900.0f - 3*d0)/1280*getHeight()),
+                		new Point((double)560.0f/720*getWidth(), (900.0f - 2*d0)/1280*getHeight())  // bottomLeft
+                		);// bottomRight
+                
+                
+                
+                Boundary top1 = new Boundary(
+                		new Point((double)160.0f/720*getWidth(), (500.0f - 4*d0)/1280*getHeight()),  // upLeft
+                		new Point((double)260.0f/720*getWidth(), (500.0f - 3*d0)/1280*getHeight()), // upRight
+                		new Point((double)160.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()),
+                		new Point((double)60.0f/720*getWidth(), (500.0f - 3*d0)/1280*getHeight()) // bottomLeft
+                		);// bottomRight
+                Boundary top2 = new Boundary(
+                		new Point((double)260.0f/720*getWidth(), (500.0f - 5*d0)/1280*getHeight()), // upLeft
+                		new Point((double)360.0f/720*getWidth(), (500.0f - 4*d0)/1280*getHeight()), // upRight
+                		new Point((double)260.0f/720*getWidth(), (500.0f - 3*d0)/1280*getHeight()),
+                		new Point((double)160.0f/720*getWidth(), (500.0f - 4*d0)/1280*getHeight()) // bottomLeft
+                		);// bottomRight
+                Boundary top3 = new Boundary(
+                		new Point((double)360.0f/720*getWidth(), (500.0f - 6*d0)/1280*getHeight()), // upLeft
+                		new Point((double)460.0f/720*getWidth(), (500.0f - 5*d0)/1280*getHeight()), // upRight
+                		new Point((double)360.0f/720*getWidth(), (500.0f - 4*d0)/1280*getHeight()),
+                		new Point((double)260.0f/720*getWidth(), (500.0f - 5*d0)/1280*getHeight()) // bottomLeft
+                		);// bottomRight
+                Boundary top4 = new Boundary(
+                		new Point((double)260.0f/720*getWidth(), (500.0f - 3*d0)/1280*getHeight()), // upLeft
+                		new Point((double)360.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()), // upRight
+                		new Point((double)260.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()),  // bottomRight
+                		new Point((double)160.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()) // bottomLeft
+                		);
+                Boundary top5 = new Boundary(
+                		new Point((double)360.0f/720*getWidth(), (500.0f - 4*d0)/1280*getHeight()), // upLeft
+                		new Point((double)460.0f/720*getWidth(), (500.0f - 3*d0)/1280*getHeight()), // upRight
+                		new Point((double)360.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()), // bottomRight
+                		new Point((double)260.0f/720*getWidth(), (500.0f - 3*d0)/1280*getHeight()) // bottomLeft
+                		);
+                Boundary top6 = new Boundary(
+                		new Point((double)460.0f/720*getWidth(), (500.0f - 5*d0)/1280*getHeight()), // upLeft
+                		new Point((double)560.0f/720*getWidth(), (500.0f - 4*d0)/1280*getHeight()), // upRight
+                		new Point((double)460.0f/720*getWidth(), (500.0f - 3*d0)/1280*getHeight()), // bottomRight
+                		new Point((double)360.0f/720*getWidth(), (500.0f - 4*d0)/1280*getHeight()) // bottomLeft
+                		);
+                Boundary top7 = new Boundary(
+                		new Point((double)360.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()), // upLeft
+                		new Point((double)460.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()), // upRight
+                		new Point((double)360.0f/720*getWidth(), (500.0f)/1280*getHeight()), // bottomRight
+                		new Point((double)260.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()) // bottomLeft
+                		);
+                Boundary top8 = new Boundary(
+                		new Point((double)460.0f/720*getWidth(), (500.0f - 3*d0)/1280*getHeight()), // upLeft
+                		new Point((double)560.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()), // upRight
+                		new Point((double)460.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()),  // bottomRight
+                		new Point((double)360.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()) // bottomLeft
+                		);
+                Boundary top9 = new Boundary(
+                		new Point((double)560.0f/720*getWidth(), (500.0f - 4*d0)/1280*getHeight()),  // upLeft
+                		new Point((double)660.0f/720*getWidth(), (500.0f - 3*d0)/1280*getHeight()), // upRight
+                		new Point((double)560.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()),
+                		new Point((double)460.0f/720*getWidth(), (500.0f - 3*d0)/1280*getHeight()) // bottomLeft
+                		);// bottomRight
+                
+                if (top1.contains(test)) {
+                	if (dx > 30 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			originX = e.getX();
+            			originY = e.getY();
+            			mRenderer.rotateDownCube3("right1");
+            		}
+            		if (dx > 30 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateUpCube3("front1");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                	if (dx < -20 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateDownCube3("front1");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+            		if (dx < -20 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			mRenderer.rotateUpCube3("right1");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                }
+                
+                if (top2.contains(test)) {
+                	if (dx > 30 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			mRenderer.rotateDownCube3("right2");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+            		if (dx > 30 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateUpCube3("front1");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                	if (dx < -30 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateDownCube3("front1");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+            		if (dx < -30 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			mRenderer.rotateUpCube3("right2");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                }
+                
+                if (top3.contains(test)) {
+                	if (dx > 30 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			mRenderer.rotateDownCube3("right3");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+            		if (dx > 30 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateUpCube3("front1");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                	if (dx < -30 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateDownCube3("front1");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+            		if (dx < -30 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			mRenderer.rotateUpCube3("right3");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                }
+                
+                if (top4.contains(test)) {
+                	if (dx > 30 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			mRenderer.rotateDownCube3("right1");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+            		if (dx > 30 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateUpCube3("front2");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                	if (dx < -30 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateDownCube3("front2");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+            		if (dx < -30 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			mRenderer.rotateUpCube3("right1");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                }
+                
+                if (top5.contains(test)) {
+                	if (dx > 30 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			mRenderer.rotateDownCube3("right2");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+            		if (dx > 30 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateUpCube3("front2");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                	if (dx < -30 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateDownCube3("front2");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+            		if (dx < -30 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			mRenderer.rotateUpCube3("right2");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                }
+                
+                if (top6.contains(test)) {
+                	if (dx > 30 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			mRenderer.rotateDownCube3("right3");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+            		if (dx > 30 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateUpCube3("front2");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                	if (dx < -30 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateDownCube3("front2");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+            		if (dx < -30 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			mRenderer.rotateUpCube3("right3");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                }
+                
+                if (top7.contains(test)) {
+                	if (dx > 30 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			mRenderer.rotateDownCube3("right1");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+            		if (dx > 30 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateUpCube3("front3");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                	if (dx < -30 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateDownCube3("front3");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+            		if (dx < -30 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			mRenderer.rotateUpCube3("right1");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                }
+                if (top8.contains(test)) {
+                	if (dx > 30 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			mRenderer.rotateDownCube3("right2");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+            		if (dx > 30 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateUpCube3("front3");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                	if (dx < -30 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateDownCube3("front3");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+            		if (dx < -30 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			mRenderer.rotateUpCube3("right2");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                }
+                
+                if (top9.contains(test)) {
+                	if (dx > 30 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			mRenderer.rotateDownCube3("right3");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+            		if (dx > 30 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateUpCube3("front3");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                	if (dx < -30 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_vertical_cube3();
+            			mRenderer.rotateDownCube3("front3");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+            		if (dx < -30 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_horizontal_cube3();
+            			mRenderer.rotateUpCube3("right3");
+            			originX = e.getX();
+            			originY = e.getY();
+            		}
+                }
                 //left1 
-                if( 60.0f/720*getWidth() < originX && originX < 160.0f/720*getWidth() && originY > (500.0f - 2.3*d0)/1280*getHeight() && originY < (633.3f - 2.7*d0) /1280*getHeight()){
+                //if( 60.0f/720*getWidth() < originX && originX < 160.0f/720*getWidth() && originY > (500.0f - 2.3*d0)/1280*getHeight() && originY < (633.3f - 2.7*d0) /1280*getHeight()){
+                if (left1.contains(test)) {
                 	//Rotate right
                 	if(dx > 50 && dy > -10 && dy < 100){
                     	mRenderer.on_change_horizontal_cube3();
@@ -88,14 +528,14 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                     	mRenderer.on_change_horizontal_cube3();
                     	originX = e.getX();
                     	originY = e.getY();
-                    	mRenderer.rotateLeftCube3("right1");                		
+                    	mRenderer.rotateLeftCube3("right1");
                 	}
                 	//Rotate Up
                 	if(dy <-50 && dx > -10 && dx < 50){
                     	mRenderer.on_change_vertical_cube3();
                     	originX = e.getX();
                     	originY = e.getY();
-                    	mRenderer.rotateUpCube3("front1");                		
+                    	mRenderer.rotateUpCube3("front1");
                 	}
                 	//Rotate Down
                 	if(dy > 50 && dx < 20 && dx > -20){
@@ -106,7 +546,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	}
                 }
                 //left2 
-                if(160.0f/720*getWidth() < originX && originX < 260.0f/720*getWidth() && originY > (500.0f - 1.3*d0)/1280*getHeight() && originY < (633.3f - 1.7*d0)/1280*getHeight()){
+                if (left2.contains(test)) {
                 	//Rotate Right
                 	if(dx > 50 && dy > -10 && dy < 100){
                     	mRenderer.on_change_horizontal_cube3();
@@ -137,7 +577,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	}
               }
                 //left3 
-                if(260.0f/720*getWidth() < originX && originX < 360.0f/720*getWidth() && originY > (500.0f - 0.3*d0)/1280*getHeight() && originY < (633.3f - 0.7*d0) /1280*getHeight()){
+                if (left3.contains(test)) {
                 	//Rotate Right
                 	if(dx > 50 && dy > -100 && dy < 100){
                     	mRenderer.on_change_horizontal_cube3();
@@ -168,7 +608,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	}
               }
                 //right1
-                if(360.0f/720*getWidth() < originX && originX < 460.0f/720*getWidth() && originY > (500.0f - 0.3*d0)/1280*getHeight() && originY < (633.3f - 0.7*d0)/1280*getHeight()){
+                if (right1.contains(test)) {
                 	//Rotate Right
                 	if(dx > 50 && dy < 10 && dy > -100){
                     	mRenderer.on_change_horizontal_cube3();
@@ -199,7 +639,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	}
               }                
                 //right2                
-                if((460.0f)/720*getWidth() < originX && originX < (560.0f)/720*getWidth() && originY > (500.0f - 1.3*d0)/1280*getHeight() && originY < (633.3f - 1.7*d0) /1280*getHeight()){
+                if (right2.contains(test)) {
                 	//Rotate Right
                 	if(dx > 50 && dy < 10 && dy > -100){
                     	mRenderer.on_change_horizontal_cube3();
@@ -230,7 +670,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	}
               }
                 //right3                
-                if((560.0f)/720*getWidth() < originX && originX < (660.0f)/720*getWidth() && originY > (500.0f - 2.3*d0)/1280*getHeight() && originY < (633.3f - 2.7*d0) /1280*getHeight()){
+                if (right3.contains(test)) {
                 	//Rotate Right
                 	if(dx > 50 && dy < 10 && dy > -100){
                     	mRenderer.on_change_horizontal_cube3();
@@ -271,7 +711,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 
                 
                 //left4 
-                if( 60.0f/720*getWidth() < originX && originX < 160.0f/720*getWidth() && originY > (633.3f - 2.3*d0)/1280*getHeight() && originY < (766.6f - 2.7*d0) /1280*getHeight()){
+                if (left4.contains(test)) {
                 	//Rotate right
                 	if(dx > 50 && dy > -10 && dy < 100){
                     	mRenderer.on_change_horizontal_cube3();
@@ -302,7 +742,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	}
                 }
                 //left5 
-                if(160.0f/720*getWidth() < originX && originX < 260.0f/720*getWidth() && originY > (633.3f - 1.3*d0)/1280*getHeight() && originY < (766.6f - 1.7*d0)/1280*getHeight()){
+                if (left5.contains(test)) {
                 	//Rotate Right
                 	if(dx > 50 && dy > -10 && dy < 100){
                     	mRenderer.on_change_horizontal_cube3();
@@ -333,7 +773,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	}
                }
                 //left6 
-                if(260.0f/720*getWidth() < originX && originX < 360.0f/720*getWidth() && originY > (633.3f - 0.3*d0)/1280*getHeight() && originY < (766.6f - 0.7*d0) /1280*getHeight()){
+                if (left6.contains(test)) {
                 	//Rotate Right
                 	if(dx > 50 && dy > -100 && dy < 100){
                     	mRenderer.on_change_horizontal_cube3();
@@ -364,7 +804,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	}
               }
                 //right4
-                if(360.0f/720*getWidth() < originX && originX < 460.0f/720*getWidth() && originY > (633.3f - 0.3*d0)/1280*getHeight() && originY < (766.6f - 0.7*d0)/1280*getHeight()){
+                if (right4.contains(test)) {
                 	//Rotate Right
                 	if(dx > 50 && dy < 10 && dy > -100){
                     	mRenderer.on_change_horizontal_cube3();
@@ -395,7 +835,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	}
               }                
                 //right5                
-                if((460.0f)/720*getWidth() < originX && originX < (560.0f)/720*getWidth() && originY > (633.3f - 1.3*d0)/1280*getHeight() && originY < (766.6f - 1.7*d0) /1280*getHeight()){
+                if (right5.contains(test)) {
                 	//Rotate Right
                 	if(dx > 50 && dy < 10 && dy > -100){
                     	mRenderer.on_change_horizontal_cube3();
@@ -426,7 +866,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	}
                }
                 //right6                
-                if((560.0f)/720*getWidth() < originX && originX < (660.0f)/720*getWidth() && originY > (633.3f - 2.3*d0)/1280*getHeight() && originY < (766.6f - 2.7*d0) /1280*getHeight()){
+                if (right6.contains(test)) {
                 	//Rotate Right
                 	if(dx > 50 && dy < 10 && dy > -100){
                     	mRenderer.on_change_horizontal_cube3();
@@ -464,7 +904,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 //Round 3
                 
                 //left7 
-                if( 60.0f/720*getWidth() < originX && originX < 160.0f/720*getWidth() && originY > (766.6f - 2.3*d0)/1280*getHeight() && originY < (900.0f - 2.7*d0) /1280*getHeight()){
+                if (left7.contains(test)) {
                 	//Rotate right
                 	if(dx > 50 && dy > -10 && dy < 100){
                     	mRenderer.on_change_horizontal_cube3();
@@ -495,7 +935,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	}
              }
                 //left8 
-                if(160.0f/720*getWidth() < originX && originX < 260.0f/720*getWidth() && originY > (766.6f - 1.3*d0)/1280*getHeight() && originY < (900.0f - 1.7*d0)/1280*getHeight()){
+                if(left8.contains(test)){
                 	//Rotate Right
                 	if(dx > 50 && dy > -10 && dy < 100){
                     	mRenderer.on_change_horizontal_cube3();
@@ -526,7 +966,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	}
                }
                 //left9 
-                if(260.0f/720*getWidth() < originX && originX < 360.0f/720*getWidth() && originY > (766.6f - 0.3*d0)/1280*getHeight() && originY < (900.0f - 0.7*d0) /1280*getHeight()){
+                if (left9.contains(test)) {
                 	//Rotate Right
                 	if(dx > 50 && dy > -100 && dy < 100){
                     	mRenderer.on_change_horizontal_cube3();
@@ -557,7 +997,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	}
              }
                 //right7
-                if(360.0f/720*getWidth() < originX && originX < 460.0f/720*getWidth() && originY > (766.6f - 0.3*d0)/1280*getHeight() && originY < (900.0f - 0.7*d0)/1280*getHeight()){
+                if (right7.contains(test)) {
                 	//Rotate Right
                 	if(dx > 50 && dy < 10 && dy > -100){
                     	mRenderer.on_change_horizontal_cube3();
@@ -588,7 +1028,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	}
                }                
                 //right8                
-                if((460.0f)/720*getWidth() < originX && originX < (560.0f)/720*getWidth() && originY > (766.6f - 1.3*d0)/1280*getHeight() && originY < (900.0f - 1.7*d0) /1280*getHeight()){
+                if (right8.contains(test)) {
                 	//Rotate Right
                 	if(dx > 50 && dy < 10 && dy > -100){
                     	mRenderer.on_change_horizontal_cube3();
@@ -619,7 +1059,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	}
                 }
                 //right9                
-                if((560.0f)/720*getWidth() < originX && originX < (660.0f)/720*getWidth() && originY > (766.6f - 2.3*d0)/1280*getHeight() && originY < (900.0f - 2.7*d0) /1280*getHeight()){
+                if (right9.contains(test)) {
                 	//Rotate Right
                 	if(dx > 50 && dy < 10 && dy > -100){
                     	mRenderer.on_change_horizontal_cube3();
