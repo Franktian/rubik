@@ -59,11 +59,413 @@ public class MyGLSurfaceView extends GLSurfaceView {
         		mPreviousX = e.getX();
         		mPreviousY = e.getY();
         		break;
-        	case MotionEvent.ACTION_UP:        		
+        	case MotionEvent.ACTION_MOVE:        		
                 float dx = e.getX() - mPreviousX;
                 float dy = e.getY() - mPreviousY;
+                double d0 = 60.0;
                 
-                if (mPreviousY > 700.0f &&dx > 100 && dy < 100 && dy > -100 && mPreviousY <900.0f) {//Move Right
+                Point test = new Point((double)mPreviousX, mPreviousY);
+                
+                Boundary left1 = new Boundary(
+                		new Point((double)60.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()),  // upLeft
+                		new Point((double)210.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()),   // upRight
+                		new Point((double)210.0f/720*getWidth(), (700.0f - d0)/1280*getHeight()),   // bottomRight
+                		new Point((double)60.0f/720*getWidth(), (700.0f - 2*d0)/1280*getHeight())); // bottomLeft
+                Boundary left2 = new Boundary(
+                		new Point((double)210.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()),  // upLeft
+                		new Point((double)360.0f/720*getWidth(), ((double)500.0f)/1280*getHeight()),   // upRight
+                		new Point((double)360.0f/720*getWidth(), ((double)700.0f)/1280*getHeight()),   // bottomRight
+                		new Point((double)210.0f/720*getWidth(), (700.0f - d0)/1280*getHeight())); // bottomLeft
+                Boundary left3 = new Boundary(
+                		new Point((double)60.0f/720*getWidth(), (700.0f - 2*d0)/1280*getHeight()),  // upLeft
+                		new Point((double)210.0f/720*getWidth(), (700.0f - d0)/1280*getHeight()),   // upRight
+                		new Point((double)210.0f/720*getWidth(), (900.0f - d0)/1280*getHeight()),   // bottomRight
+                		new Point((double)60.0f/720*getWidth(), (900.0f - 2*d0)/1280*getHeight())); // bottomLeft
+                Boundary left4 = new Boundary(
+                		new Point((double)210.0f/720*getWidth(), (700.0f - d0)/1280*getHeight()),  // upLeft
+                		new Point((double)360.0f/720*getWidth(), ((double)700.0f)/1280*getHeight()),   // upRight
+                		new Point((double)360.0f/720*getWidth(), ((double)900.0f)/1280*getHeight()),   // bottomRight
+                		new Point((double)210.0f/720*getWidth(), (900.0f - d0)/1280*getHeight())); // bottomLeft
+                
+                
+                Boundary right1 = new Boundary(
+                		new Point((double)360.0f/720*getWidth(), ((double)500.0f)/1280*getHeight()),  // upLeft
+                		new Point((double)510.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()),   // upRight
+                		new Point((double)510.0f/720*getWidth(), (700.0f - d0)/1280*getHeight()),   // bottomRight
+                		new Point((double)360.0f/720*getWidth(), ((double)700.0f)/1280*getHeight())); // bottomLeft
+                Boundary right2 = new Boundary(
+                		new Point((double)510.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()),  // upLeft
+                		new Point((double)660.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()),   // upRight
+                		new Point((double)660.0f/720*getWidth(), (700.0f - 2*d0)/1280*getHeight()),   // bottomRight
+                		new Point((double)510.0f/720*getWidth(), (700.0f - d0)/1280*getHeight())); // bottomLeft
+                Boundary right3 = new Boundary(
+                		new Point((double)360.0f/720*getWidth(), ((double)700.0f)/1280*getHeight()),  // upLeft
+                		new Point((double)510.0f/720*getWidth(), (700.0f - d0)/1280*getHeight()),   // upRight
+                		new Point((double)510.0f/720*getWidth(), (900.0f - d0)/1280*getHeight()),   // bottomRight
+                		new Point((double)360.0f/720*getWidth(), ((double)900.0f)/1280*getHeight())); // bottomLeft
+                Boundary right4 = new Boundary(
+                		new Point((double)510.0f/720*getWidth(), (700.0f - d0)/1280*getHeight()),  // upLeft
+                		new Point((double)660.0f/720*getWidth(), (700.0f - 2*d0)/1280*getHeight()),   // upRight
+                		new Point((double)660.0f/720*getWidth(), (900.0f - 2*d0)/1280*getHeight()),   // bottomRight
+                		new Point((double)510.0f/720*getWidth(), (900.0f - d0)/1280*getHeight())); // bottomLeft
+                
+                Boundary top1 = new Boundary(
+                		new Point((double)60.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()),
+                		new Point((double)210.0f/720*getWidth(), (500.0f - 3*d0)/1280*getHeight()),
+                		new Point((double)360.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()),
+                		new Point((double)210.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()));
+                Boundary top2 = new Boundary(
+                		new Point((double)210.0f/720*getWidth(), (500.0f - 3*d0)/1280*getHeight()),
+                		new Point((double)360.0f/720*getWidth(), (500.0f - 4*d0)/1280*getHeight()),
+                		new Point((double)510.0f/720*getWidth(), (500.0f - 4*d0)/1280*getHeight()),
+                		new Point((double)360.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()));
+                Boundary top3 = new Boundary(
+                		new Point((double)210.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()),
+                		new Point((double)360.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()),
+                		new Point((double)510.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()),
+                		new Point((double)360.0f/720*getWidth(), ((double)500.0f)/1280*getHeight()));
+                Boundary top4 = new Boundary(
+                		new Point((double)360.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()),
+                		new Point((double)510.0f/720*getWidth(), (500.0f - 3*d0)/1280*getHeight()),
+                		new Point((double)660.0f/720*getWidth(), (500.0f - 2*d0)/1280*getHeight()),
+                		new Point((double)510.0f/720*getWidth(), (500.0f - d0)/1280*getHeight()));
+                if (left1.contains(test)) {
+                	if(dx > 50 && dy > -10 && dy < 100){
+                    	mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateRightCube2("b1");           		
+                	}
+                	//Rotate left
+                	if(dx < -50 && dy < 10 && dy > -100){
+                    	mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateLeftCube2("b1");
+                	}
+                	//Rotate Up
+                	if(dy <-50 && dx > -10 && dx < 50){
+                    	mRenderer.on_change_vertical_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateUpCube2("a1");
+                	}
+                	//Rotate Down
+                	if(dy > 50 && dx < 20 && dx > -20){
+                    	mRenderer.on_change_vertical_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateDownCube2("a1");                		
+                	}
+                }
+                if (left2.contains(test)) {
+                	if(dx > 50 && dy > -10 && dy < 100){
+                    	mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateRightCube2("b1");           		
+                	}
+                	//Rotate left
+                	if(dx < -50 && dy < 10 && dy > -100){
+                    	mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateLeftCube2("b1");
+                	}
+                	//Rotate Up
+                	if(dy <-50 && dx > -10 && dx < 50){
+                    	mRenderer.on_change_vertical_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateUpCube2("a2");
+                	}
+                	//Rotate Down
+                	if(dy > 50 && dx < 20 && dx > -20){
+                    	mRenderer.on_change_vertical_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateDownCube2("a2");                		
+                	}
+                }
+                if (left3.contains(test)) {
+                	if(dx > 50 && dy > -10 && dy < 100){
+                    	mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateRightCube2("b3");           		
+                	}
+                	//Rotate left
+                	if(dx < -50 && dy < 10 && dy > -100){
+                    	mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateLeftCube2("b3");
+                	}
+                	//Rotate Up
+                	if(dy <-50 && dx > -10 && dx < 50){
+                    	mRenderer.on_change_vertical_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateUpCube2("a1");
+                	}
+                	//Rotate Down
+                	if(dy > 50 && dx < 20 && dx > -20){
+                    	mRenderer.on_change_vertical_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateDownCube2("a1");                		
+                	}
+                }
+                if (left4.contains(test)) {
+                	if(dx > 50 && dy > -10 && dy < 100){
+                    	mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateRightCube2("b3");           		
+                	}
+                	//Rotate left
+                	if(dx < -50 && dy < 10 && dy > -100){
+                    	mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateLeftCube2("b3");
+                	}
+                	//Rotate Up
+                	if(dy <-50 && dx > -10 && dx < 50){
+                    	mRenderer.on_change_vertical_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateUpCube2("a2");
+                	}
+                	//Rotate Down
+                	if(dy > 50 && dx < 20 && dx > -20){
+                    	mRenderer.on_change_vertical_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateDownCube2("a2");                		
+                	}
+                }
+                if (right1.contains(test)) {
+                	if(dx > 50 && dy < 10 && dy > -100){
+                    	mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateRightCube2("b1");           		
+                	}
+                	//Rotate left
+                	if(dx < -50 && dy > -10 && dy < 100){
+                    	mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateLeftCube2("b1");
+                	}
+                	//Rotate Up
+                	if(dy < -50 && dx < 10 && dx > -50){
+                    	mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateUpCube2("b1");
+                	}
+                	//Rotate Down
+                	if(dy > 50 && dx < 20 && dx > -20){
+                		mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateDownCube2("b1");                		
+                	}
+                }
+                if (right2.contains(test)) {
+                	if(dx > 50 && dy < 10 && dy > -100){
+                    	mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateRightCube2("b1");           		
+                	}
+                	//Rotate left
+                	if(dx < -50 && dy > -10 && dy < 100){
+                    	mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateLeftCube2("b1");
+                	}
+                	//Rotate Up
+                	if(dy < -50 && dx < 10 && dx > -50){
+                		mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateUpCube2("b2");
+                	}
+                	//Rotate Down
+                	if(dy > 50 && dx < 20 && dx > -20){
+                		mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateDownCube2("b2");                		
+                	}
+                }
+                if (right3.contains(test)) {
+                	if(dx > 50 && dy < 10 && dy > -100){
+                    	mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateRightCube2("b3");           		
+                	}
+                	//Rotate left
+                	if(dx < -50 && dy > -10 && dy < 100){
+                    	mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateLeftCube2("b3");
+                	}
+                	//Rotate Up
+                	if(dy < -50 && dx < 20 && dx > -20){
+                		mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateUpCube2("b1");
+                	}
+                	//Rotate Down
+                	if(dy > 50 && dx < 20 && dx > -20){
+                		mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateDownCube2("b1");                		
+                	}
+                }
+                if (right4.contains(test)) {
+                	if(dx > 50 && dy < 10 && dy > -100){
+                    	mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateRightCube2("b3");           		
+                	}
+                	//Rotate left
+                	if(dx < -50 && dy > -10 && dy < 100){
+                    	mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateLeftCube2("b3");
+                	}
+                	//Rotate Up
+                	if(dy < -50 && dx < 20 && dx > -20){
+                		mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateUpCube2("b2");
+                	}
+                	//Rotate Down
+                	if(dy > 50 && dx < 20 && dx > -20){
+                		mRenderer.on_change_horizontal_cube2();
+                    	mPreviousX = e.getX();
+                    	mPreviousY = e.getY();
+                    	mRenderer.rotateDownCube2("b2");                		
+                	}
+                }
+                if (top1.contains(test)) {
+                	if (dx > 50 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_horizontal_cube2();
+            			mPreviousX = e.getX();
+            			mPreviousY = e.getY();
+            			mRenderer.rotateDownCube2("b1");
+            		}
+            		if (dx > 50 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_vertical_cube2();
+            			mRenderer.rotateUpCube2("a1");
+            			mPreviousX = e.getX();
+            			mPreviousY = e.getY();
+            		}
+                	if (dx < -40 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_vertical_cube2();
+            			mRenderer.rotateDownCube2("a1");
+            			mPreviousX = e.getX();
+            			mPreviousY = e.getY();
+            		}
+            		if (dx < -40 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_horizontal_cube2();
+            			mRenderer.rotateUpCube2("b1");
+            			mPreviousX = e.getX();
+            			mPreviousX = e.getY();
+            		}
+                }
+                if (top2.contains(test)) {
+                	if (dx > 50 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_horizontal_cube2();
+            			mPreviousX = e.getX();
+            			mPreviousY = e.getY();
+            			mRenderer.rotateDownCube2("b2");
+            		}
+            		if (dx > 50 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_vertical_cube2();
+            			mRenderer.rotateUpCube2("a1");
+            			mPreviousX = e.getX();
+            			mPreviousY = e.getY();
+            		}
+                	if (dx < -50 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_vertical_cube2();
+            			mRenderer.rotateDownCube2("a1");
+            			mPreviousX = e.getX();
+            			mPreviousY = e.getY();
+            		}
+            		if (dx < -50 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_horizontal_cube2();
+            			mRenderer.rotateUpCube2("b2");
+            			mPreviousX = e.getX();
+            			mPreviousX = e.getY();
+            		}
+                }
+                if (top3.contains(test)) {
+                	if (dx > 40 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_horizontal_cube2();
+            			mPreviousX = e.getX();
+            			mPreviousY = e.getY();
+            			mRenderer.rotateDownCube2("b1");
+            		}
+            		if (dx > 50 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_vertical_cube2();
+            			mRenderer.rotateUpCube2("a2");
+            			mPreviousX = e.getX();
+            			mPreviousY = e.getY();
+            		}
+                	if (dx < -40 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_vertical_cube2();
+            			mRenderer.rotateDownCube2("a2");
+            			mPreviousX = e.getX();
+            			mPreviousY = e.getY();
+            		}
+            		if (dx < -50 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_horizontal_cube2();
+            			mRenderer.rotateUpCube2("b1");
+            			mPreviousX = e.getX();
+            			mPreviousX = e.getY();
+            		}
+                }
+                if (top4.contains(test)) {
+                	if (dx > 40 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_horizontal_cube2();
+            			mPreviousX = e.getX();
+            			mPreviousY = e.getY();
+            			mRenderer.rotateDownCube2("b2");
+            		}
+            		if (dx > 50 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_vertical_cube2();
+            			mRenderer.rotateUpCube2("a2");
+            			mPreviousX = e.getX();
+            			mPreviousY = e.getY();
+            		}
+                	if (dx < -50 && dy > 0 && dy < 100) {
+            			mRenderer.on_change_vertical_cube2();
+            			mRenderer.rotateDownCube2("a2");
+            			mPreviousX = e.getX();
+            			mPreviousY = e.getY();
+            		}
+            		if (dx < -50 && dy < 0 && dy > -100) {
+            			mRenderer.on_change_horizontal_cube2();
+            			mRenderer.rotateUpCube2("b2");
+            			mPreviousX = e.getX();
+            			mPreviousX = e.getY();
+            		}
+                }
+               /* if (mPreviousY > 700.0f &&dx > 100 && dy < 100 && dy > -100 && mPreviousY <900.0f) {//Move Right
               //  	mRenderer.on_change_horizontal();
         		//	mRenderer.rotateLeft('b');
                 	mRenderer.on_change_horizontal_cube2();
@@ -140,7 +542,7 @@ public class MyGLSurfaceView extends GLSurfaceView {
               //  	mRenderer.rotateUp('a');	
                 	mRenderer.on_change_vertical_cube2();
                 	mRenderer.rotateUpCube2("a2");
-                } 
+                } */
 				
                 requestRender();
                 break;
