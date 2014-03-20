@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
+    android:background="@color/white"
     tools:context=".StartActivity" >
 
     <!--
@@ -46,8 +46,8 @@
 
         <Button
             android:id="@+id/cube2_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="249dp"
+            android:layout_height="49dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="@string/cube2_button" 
@@ -55,8 +55,8 @@
 
         <Button
             android:id="@+id/cube3_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="249dp"
+            android:layout_height="49dp"
             android:layout_alignLeft="@+id/cube2_button"
             android:layout_below="@+id/cube2_button"
             android:text="@string/cube3_button"

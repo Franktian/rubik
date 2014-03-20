@@ -28,12 +28,12 @@ import android.view.MotionEvent;
 public class GLSurfaceViewCube3 extends GLSurfaceView {
 
     public static GLRendererCube3 mRenderer;
-    private final float red[] = { 1.0f, 0.0f, 0.0f, 1.0f };
-    private final float green[] = { 0.0f, 1.0f, 0.0f, 1.0f };
-    private final float blue[] = { 0.0f, 0.0f, 1.0f, 1.0f };
-    private final float white[] = { 1.0f, 1.0f, 1.0f, 1.0f };
-    private final float yellow[] = { 1.0f, 1.0f, 0.0f, 1.0f };
-    private final float orange[] = { 1.0f, 0.5f, 0.0f, 1.0f };
+    //private final float red[] = { 1.0f, 0.0f, 0.0f, 1.0f };
+    //private final float green[] = { 0.0f, 1.0f, 0.0f, 1.0f };
+    //private final float blue[] = { 0.0f, 0.0f, 1.0f, 1.0f };
+    //private final float white[] = { 1.0f, 1.0f, 1.0f, 1.0f };
+    //private final float yellow[] = { 1.0f, 1.0f, 0.0f, 1.0f };
+    //private final float orange[] = { 1.0f, 0.5f, 0.0f, 1.0f };
     
     public GLSurfaceViewCube3(Context context, AttributeSet attrs) {
         super(context,attrs);
@@ -49,11 +49,11 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
         setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
     }
     
-    private final float TOUCH_SCALE_FACTOR = 180.0f / 320;
+    //private final float TOUCH_SCALE_FACTOR = 180.0f / 320;
     private float originX;
     private float originY;
-    private float mPreviousX;
-    private float mPreviousY;
+    //private float mPreviousX;
+    //private float mPreviousY;
     
     
     /*public double d0 = 100/Math.sqrt(3);

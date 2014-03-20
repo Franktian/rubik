@@ -52,12 +52,12 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
     private final float[] mProjectionMatrix = new float[16];
     private final float[] mViewMatrix = new float[16];
 //    private final float[] mRotationMatrix = new float[16];
-    private final float red[] = { 1.0f, 0.0f, 0.0f, 1.0f };
-    private final float green[] = { 0.0f, 1.0f, 0.0f, 1.0f };
-    private final float blue[] = { 0.0f, 0.0f, 1.0f, 1.0f };
+    private final float red[] = { 0.769f, 0.118f, 0.227f, 1.0f };
+    private final float green[] = { 0.0f, 0.62f, 0.376f, 1.0f };
+    private final float blue[] = { 0.0f, 0.318f, 0.729f, 1.0f };
     private final float white[] = { 1.0f, 1.0f, 1.0f, 1.0f };
-    private final float yellow[] = { 1.0f, 1.0f, 0.0f, 1.0f };
-    private final float orange[] = { 1.0f, 0.5f, 0.0f, 1.0f };
+    private final float yellow[] = { 1.0f, 0.835f, 0.0f, 1.0f };
+    private final float orange[] = { 1.0f, 0.345f, 0.0f, 1.0f };
     public static Cube3 myCube3 = new Cube3();
 
     private float top_one_color[] = null;
