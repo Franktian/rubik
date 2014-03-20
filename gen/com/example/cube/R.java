@@ -33,13 +33,28 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int backback=0x7f020000;
+        public static final int backbackhoverimg=0x7f020001;
+        public static final int backbackimg=0x7f020002;
+        public static final int cube2back=0x7f020003;
+        public static final int cube2backhoverimg=0x7f020004;
+        public static final int cube2backimg=0x7f020005;
+        public static final int cube3back=0x7f020006;
+        public static final int cube3backhoverimg=0x7f020007;
+        public static final int cube3backimg=0x7f020008;
+        public static final int help=0x7f020009;
+        public static final int helphoverimg=0x7f02000a;
+        public static final int helpimg=0x7f02000b;
+        public static final int ic_launcher=0x7f02000c;
+        public static final int title=0x7f02000d;
     }
     public static final class id {
         public static final int back_button=0x7f080001;
-        public static final int cube2_button=0x7f080003;
-        public static final int cube3_button=0x7f080004;
+        public static final int button1=0x7f080006;
+        public static final int cube2_button=0x7f080004;
+        public static final int cube3_button=0x7f080005;
         public static final int fullscreen_content_controls=0x7f080000;
+        public static final int help_button=0x7f080003;
         public static final int textView1=0x7f080002;
     }
     public static final class layout {
