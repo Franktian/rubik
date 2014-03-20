@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -16,7 +15,13 @@ public class StartActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_start);
 		final Button button1b  = (Button) findViewById(R.id.button1);
-		button1b.setBackgroundResource(R.drawable.backbutton);
+		button1b.setBackgroundResource(R.drawable.backback);
+		final Button cube2button  = (Button) findViewById(R.id.cube2_button);
+		cube2button.setBackgroundResource(R.drawable.cube2back);
+		final Button cube3button  = (Button) findViewById(R.id.cube3_button);
+		cube3button.setBackgroundResource(R.drawable.cube3back);		
+		final Button helpbutton  = (Button) findViewById(R.id.help_button);
+		helpbutton.setBackgroundResource(R.drawable.help);		
 		backbuttonclick = 0;
 
 	}
