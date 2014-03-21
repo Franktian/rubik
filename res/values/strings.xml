@@ -10,5 +10,9 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="back">BACK</string>
+    <string name="setting">Setting Page</string>
+    <string name="info">INFO Page</string>
+    <string name="rank">Rank Page</string>
+    <string name="help">Help Page</string>
     
 </resources>

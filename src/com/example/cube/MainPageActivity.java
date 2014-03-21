@@ -24,7 +24,7 @@ public class MainPageActivity extends Activity {
 	}
 
     public void backView(View view) {
-		Intent intent = new Intent(this, StartActivity.class);
+		Intent intent = new Intent(this, SubmenuActivity.class);
 	    startActivity(intent);
     }
 	
