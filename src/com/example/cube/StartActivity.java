@@ -14,26 +14,33 @@ public class StartActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_start);
-		final Button button1b  = (Button) findViewById(R.id.button1);
-		button1b.setBackgroundResource(R.drawable.backback);
-		final Button cube2button  = (Button) findViewById(R.id.cube2_button);
-		cube2button.setBackgroundResource(R.drawable.cube2back);
-		final Button cube3button  = (Button) findViewById(R.id.cube3_button);
-		cube3button.setBackgroundResource(R.drawable.cube3back);		
-		final Button helpbutton  = (Button) findViewById(R.id.help_button);
-		helpbutton.setBackgroundResource(R.drawable.help);		
+		final Button rankbutton  = (Button) findViewById(R.id.rank_button);
+		rankbutton.setBackgroundResource(R.drawable.rankback);
+		final Button infobutton  = (Button) findViewById(R.id.info_button);
+		infobutton.setBackgroundResource(R.drawable.infoback);
+		final Button playbutton  = (Button) findViewById(R.id.play_button);
+		playbutton.setBackgroundResource(R.drawable.playback);		
+		final Button settingbutton  = (Button) findViewById(R.id.setting_button);
+		settingbutton.setBackgroundResource(R.drawable.settingback);		
 		backbuttonclick = 0;
 
 	}
-	public void startCube2(View view){
-		Intent intent = new Intent(this, MainPageActivity.class);
+	public void play(View view){
+		Intent intent = new Intent(this, SubmenuActivity.class);
 	    startActivity(intent);
 	}
-	public void startCube3(View view){
-		Intent intent = new Intent(this, Cube3Activity.class);
-		startActivity(intent);
+	public void startSetting(View view){
+		Intent intent = new Intent(this, SettingActivity.class);
+	    startActivity(intent);		
 	}
-
+	public void startInfo(View view){
+		Intent intent = new Intent(this, InfoActivity.class);
+	    startActivity(intent);		
+	}
+	public void startRank(View view){
+		Intent intent = new Intent(this, RankActivity.class);
+	    startActivity(intent);		
+	}
 	@Override
 	public void onBackPressed() {
 		if(backbuttonclick >0){

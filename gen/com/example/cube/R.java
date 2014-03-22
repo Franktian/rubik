@@ -42,25 +42,48 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int cube3back=0x7f020006;
         public static final int cube3backhoverimg=0x7f020007;
         public static final int cube3backimg=0x7f020008;
-        public static final int help=0x7f020009;
-        public static final int helphoverimg=0x7f02000a;
-        public static final int helpimg=0x7f02000b;
+        public static final int helpback=0x7f020009;
+        public static final int helpbackhoverimg=0x7f02000a;
+        public static final int helpbackimg=0x7f02000b;
         public static final int ic_launcher=0x7f02000c;
-        public static final int title=0x7f02000d;
+        public static final int infoback=0x7f02000d;
+        public static final int infobackhoverimg=0x7f02000e;
+        public static final int infobackimg=0x7f02000f;
+        public static final int playback=0x7f020010;
+        public static final int playbackhoverimg=0x7f020011;
+        public static final int playbackimg=0x7f020012;
+        public static final int rankback=0x7f020013;
+        public static final int rankbackhoverimg=0x7f020014;
+        public static final int rankbackimg=0x7f020015;
+        public static final int settingback=0x7f020016;
+        public static final int settingbackhoverimg=0x7f020017;
+        public static final int settingbackimg=0x7f020018;
+        public static final int title=0x7f020019;
     }
     public static final class id {
         public static final int back_button=0x7f080001;
-        public static final int button1=0x7f080006;
-        public static final int cube2_button=0x7f080004;
-        public static final int cube3_button=0x7f080005;
+        public static final int button1=0x7f08000c;
+        public static final int cube2_button=0x7f08000a;
+        public static final int cube3_button=0x7f08000b;
         public static final int fullscreen_content_controls=0x7f080000;
-        public static final int help_button=0x7f080003;
+        public static final int help_button=0x7f080009;
+        public static final int info_button=0x7f080007;
+        public static final int play_button=0x7f080008;
+        public static final int rank_button=0x7f080005;
+        public static final int setting_button=0x7f080006;
         public static final int textView1=0x7f080002;
+        public static final int textView2=0x7f080004;
+        public static final int textView3=0x7f080003;
     }
     public static final class layout {
         public static final int activity_cube3=0x7f030000;
-        public static final int activity_main_page=0x7f030001;
-        public static final int activity_start=0x7f030002;
+        public static final int activity_help=0x7f030001;
+        public static final int activity_info=0x7f030002;
+        public static final int activity_main_page=0x7f030003;
+        public static final int activity_rank=0x7f030004;
+        public static final int activity_setting=0x7f030005;
+        public static final int activity_start=0x7f030006;
+        public static final int activity_submenu=0x7f030007;
     }
     public static final class string {
         public static final int app_name=0x7f060000;
@@ -69,6 +92,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int cube3_button=0x7f060003;
         public static final int dummy_button=0x7f060006;
         public static final int dummy_content=0x7f060007;
+        public static final int help=0x7f06000c;
+        public static final int info=0x7f06000a;
+        public static final int rank=0x7f06000b;
+        public static final int setting=0x7f060009;
         public static final int start_instruction=0x7f060001;
         public static final int title_activity_cube3=0x7f060005;
         public static final int title_activity_main_page=0x7f060004;
