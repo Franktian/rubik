@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 
 import com.example.cube.util.SystemUiHider;
 
@@ -16,9 +14,9 @@ import com.example.cube.util.SystemUiHider;
  * @see SystemUiHider
  */
 public class Cube3Activity extends Activity {
-	private Button leftButton;
-	private Button rightButton;
-	private Button backButton;
+//	private Button leftButton;
+//	private Button rightButton;
+//	private Button backButton;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -28,7 +26,7 @@ public class Cube3Activity extends Activity {
 //		leftButton.setOnClickListener(leftView());
 	//	rightButton.setOnClickListener(rightView());
 	}
-	
+	/*
     private OnClickListener leftView() {
         return new OnClickListener() {
             @Override
@@ -47,7 +45,7 @@ public class Cube3Activity extends Activity {
             }
         };
     }
-
+*/
     public void backView(View view) {
 		Intent intent = new Intent(this, SubmenuActivity.class);
 	    startActivity(intent);

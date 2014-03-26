@@ -44,8 +44,28 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
     private Square3_Right_Seven mSquare3_Right_Seven;
     private Square3_Right_Eight mSquare3_Right_Eight;
     private Square3_Right_Nine mSquare3_Right_Nine;
-
-
+    
+	private Border1 mBorder1;
+	private Border2 mBorder2;
+	private Border3 mBorder3;
+	private Border4 mBorder4;
+	private Border5 mBorder5;
+	private Border6 mBorder6;
+	private Border7 mBorder7;
+	private Border8 mBorder8;
+    private Border9 mBorder9;
+	private Border10 mBorder10;
+	private Border11 mBorder11;
+	private Border12 mBorder12;
+	private Border13 mBorder13;
+	private Border14 mBorder14;
+	private Border15 mBorder15;
+	private Border16 mBorder16;
+	private Border17 mBorder17;
+	private Border18 mBorder18;
+	private Border19 mBorder19;
+	private Border20 mBorder20;
+	private Border21 mBorder21;
     
     // mMVPMatrix is an abbreviation for "Model View Projection Matrix"
     private final float[] mMVPMatrix = new float[16];
@@ -123,9 +143,29 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
         mSquare3_Right_Seven = new Square3_Right_Seven();
         mSquare3_Right_Eight = new Square3_Right_Eight();        
         mSquare3_Right_Nine = new Square3_Right_Nine();        
+        mBorder1 = new Border1();
+        mBorder2 = new Border2();
+        mBorder3 = new Border3();
+        mBorder4 = new Border4();
+        mBorder5 = new Border5();
+        mBorder6 = new Border6();
+        mBorder7 = new Border7();
+        mBorder8 = new Border8();
+        mBorder9 = new Border9();
+        mBorder10 = new Border10();
+        mBorder11 = new Border11();
+        mBorder12 = new Border12();
+        mBorder13 = new Border13();
+        mBorder14 = new Border14();
+        mBorder15 = new Border15();
+        mBorder16 = new Border16();
+        mBorder17 = new Border17();
+        mBorder18 = new Border18();
+        mBorder19 = new Border19();
+        mBorder20 = new Border20();
+        mBorder21 = new Border21();
 
-        
-		myCube3.front1 = new Face3("front1", "white");
+        myCube3.front1 = new Face3("front1", "white");
 		myCube3.front2 = new Face3("front2", "white");
 		myCube3.front3 = new Face3("front3", "white");
 		myCube3.front4 = new Face3("front4", "white");
@@ -203,7 +243,7 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
 
     @Override
     public void onDrawFrame(GL10 unused) {
-        float[] scratch = new float[16];
+       // float[] scratch = new float[16];
 
         
         top_one_color = getColor(myCube3.up1.getColor());
@@ -278,8 +318,30 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
         mSquare3_Right_Seven.draw(mMVPMatrix, right_seven_color);
         mSquare3_Right_Eight.draw(mMVPMatrix, right_eight_color);
         mSquare3_Right_Nine.draw(mMVPMatrix, right_nine_color);     
- 		
-
+      
+        final float [] border_color = { 0.0f, 0.0f, 0.0f, 0.0f }; 
+        mBorder1.draw(mMVPMatrix,border_color);
+        mBorder2.draw(mMVPMatrix,border_color);
+        mBorder3.draw(mMVPMatrix,border_color);
+        mBorder4.draw(mMVPMatrix,border_color);
+        mBorder5.draw(mMVPMatrix,border_color);
+	    mBorder6.draw(mMVPMatrix,border_color);
+	    mBorder7.draw(mMVPMatrix,border_color);
+	    mBorder8.draw(mMVPMatrix,border_color);
+	    mBorder9.draw(mMVPMatrix,border_color);
+	    mBorder10.draw(mMVPMatrix,border_color);
+	    mBorder11.draw(mMVPMatrix,border_color);
+	    mBorder12.draw(mMVPMatrix,border_color);
+	    mBorder13.draw(mMVPMatrix,border_color);
+        mBorder14.draw(mMVPMatrix,border_color);
+        mBorder15.draw(mMVPMatrix,border_color);
+        mBorder16.draw(mMVPMatrix,border_color);
+        mBorder17.draw(mMVPMatrix,border_color);
+        mBorder18.draw(mMVPMatrix,border_color);
+        mBorder19.draw(mMVPMatrix,border_color);
+	    mBorder20.draw(mMVPMatrix,border_color);
+		mBorder21.draw(mMVPMatrix,border_color);
+  
     }
 
     @Override
