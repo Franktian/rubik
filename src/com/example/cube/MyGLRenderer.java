@@ -14,9 +14,9 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 
     private static final String TAG = "MyGLRenderer";
     //	1*1 Cube
-    private Square_Top   mSquare_Top;
-    private Square_Left  mSquare_Left;
-    private Square_Right mSquare_Right;
+//    private Square_Top   mSquare_Top;
+//    private Square_Left  mSquare_Left;
+//    private Square_Right mSquare_Right;
 
     //Cube 2
     private Square_Top_One mSquare_Top_One;
@@ -39,7 +39,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
     private final float[] mMVPMatrix = new float[16];
     private final float[] mProjectionMatrix = new float[16];
     private final float[] mViewMatrix = new float[16];
-    private final float[] mRotationMatrix = new float[16];
+//    private final float[] mRotationMatrix = new float[16];
     private final float red[] = { 0.769f, 0.118f, 0.227f, 0.8f };
     private final float green[] = { 0.0f, 0.62f, 0.376f, 0.8f };
     private final float blue[] = { 0.0f, 0.318f, 0.729f, 0.8f };
@@ -49,11 +49,11 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
     private  Cube myCube = new Cube();
     //Cube 2
     private Cube2 myCube2 = new Cube2();
-
+/*
     private float top_color[] = null;
     private float left_color[] = null;
     private float right_color[] = null;
-
+*/
     //Cube 2
     private float top_one_color[] = null;
     private float left_one_color[] = null;
@@ -147,7 +147,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 
     @Override
     public void onDrawFrame(GL10 unused) {
-        float[] scratch = new float[16];
+       // float[] scratch = new float[16];
         //1*1 Cube
 /*		top_color = getColor(myCube.c.getColor());
         left_color = getColor(myCube.a.getColor());
@@ -258,7 +258,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
     }
 
     public void setTop(float color[]){
-    	top_color = color; 
+    	//top_color = color; 
     	top_one_color = color;
     	top_two_color = color;
     	top_three_color = color;
@@ -266,7 +266,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
     }
 
     public void setLeft(float color[]){
-    	left_color = color;
+    	//left_color = color;
     	left_one_color = color;
     	left_two_color = color;
     	left_three_color = color;
@@ -274,7 +274,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
     }
     
     public void setRight(float color[]){
-    	right_color = color;
+    	//right_color = color;
     	right_one_color = color;
     	right_two_color = color;
     	right_three_color = color;
