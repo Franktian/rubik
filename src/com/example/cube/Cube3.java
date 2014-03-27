@@ -1,5 +1,6 @@
 package com.example.cube;
 import java.util.*;
+
 public class Cube3 {
 	public Face3 front1 = new Face3();
 	public Face3 back1 = new Face3();
@@ -64,8 +65,30 @@ public class Cube3 {
 	public Face3 up9 = new Face3();
 	public Face3 down9 = new Face3();
 	
+	public Stack<String[]> moves;
+	
 	public Cube3(){
 		
+	}
+	
+	public void recordMoves (String facdId, String direction) {
+		String [] record = {facdId, direction};
+		this.moves.push(record);
+	}
+	
+	public void backToPrevious () {
+		if (!this.moves.empty()) {
+			String[] currentMove = this.moves.pop();
+			if (currentMove[1].equals("left")) {
+				this.rotateRight(currentMove[0]);
+			} else if (currentMove[1].equals("right")) {
+				this.rotateLeft(currentMove[0]);
+			} else if (currentMove[1].equals("up")) {
+				this.rotateDown(currentMove[0]);
+			} else if (currentMove[1].equals("down")){
+				this.rotateUp(currentMove[0]);
+			}
+		}
 	}
     public void onRotateLeft() {
     	for (int i = 0; i < 3; i++) {
