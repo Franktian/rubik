@@ -90,14 +90,17 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
         	case MotionEvent.ACTION_DOWN:
         		originX = e.getX();
         		originY = e.getY();
-//        		mPreviousX = e.getX();
-//        		mPreviousY = e.getY();
+        		if(originX >290.0f/720*getWidth() && originX < 420.0f/720*getWidth() && originY > 31.0f/1280*getHeight() && originY < 128.0f/1280*getHeight()){
+                	mRenderer.on_change_horizontal_cube3();
+                	mRenderer.rotateLeftCube3("right1");                		
+                    requestRender();
+        		}   
         		break;
         	case MotionEvent.ACTION_MOVE:        		
                 float dx = e.getX() - originX;
                 float dy = e.getY() - originY;
                 double d0 = 40.0;
-                
+             
                 Point test = new Point((double)originX, (double)originY);
                 
                 Boundary left1 = new Boundary(

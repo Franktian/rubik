@@ -58,6 +58,11 @@ public class MyGLSurfaceView extends GLSurfaceView {
         	case MotionEvent.ACTION_DOWN:
         		mPreviousX = e.getX();
         		mPreviousY = e.getY();
+        		if(mPreviousX >290.0f/720*getWidth()  && mPreviousY < 130.0f/1280*getHeight() && mPreviousY >34.0f/1280*getHeight()){
+                	mRenderer.on_change_horizontal_cube2();
+                	mRenderer.rotateLeftCube2("b1");        			
+                    requestRender();
+        		}
         		break;
         	case MotionEvent.ACTION_MOVE:        		
                 float dx = e.getX() - mPreviousX;
