@@ -75,19 +75,25 @@ public class Cube3 {
 		String [] record = {facdId, direction};
 		this.moves.push(record);
 	}
-	
-	public void backToPrevious () {
+	public String[] getTop () {
 		if (!this.moves.empty()) {
-			String[] currentMove = this.moves.pop();
-			if (currentMove[1].equals("left")) {
-				this.rotateRight(currentMove[0]);
-			} else if (currentMove[1].equals("right")) {
-				this.rotateLeft(currentMove[0]);
-			} else if (currentMove[1].equals("up")) {
-				this.rotateDown(currentMove[0]);
-			} else if (currentMove[1].equals("down")){
-				this.rotateUp(currentMove[0]);
-			}
+			return this.moves.pop();
+		}
+		return null;
+	}
+	public void backToPrevious (String[] currentMove) {
+			
+		if (currentMove[1].equals("left")) {
+			this.rotateRight(currentMove[0]);
+			
+		} else if (currentMove[1].equals("right")) {
+			this.rotateLeft(currentMove[0]);
+			
+		} else if (currentMove[1].equals("up")) {
+			this.rotateDown(currentMove[0]);
+			
+		} else if (currentMove[1].equals("down")){
+			this.rotateUp(currentMove[0]);
 		}
 	}
     public void onRotateLeft() {

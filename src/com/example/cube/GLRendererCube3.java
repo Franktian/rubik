@@ -495,7 +495,19 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
     	myCube3.recordMoves(faceToRotate, "down");
     }
     public void backToPreviousCube3 () {
-    	myCube3.backToPrevious();
+    	String[] top = myCube3.getTop();
+    	if (top != null) {
+    		System.out.println(top[0].substring(0));
+    		if (top[0].substring(0, 1).equals("r") && (top[1].equals("up") || top[1].equals("down"))) {
+    			//System.out.println();
+    			this.on_change_horizontal_cube3();
+    		} else if (top[0].substring(0, 1).equals("f") && (top[1].equals("up") || top[1].equals("down"))) {
+    			this.on_change_vertical_cube3();
+    		} else {
+    			this.on_change_horizontal_cube3();
+    		}
+    		myCube3.backToPrevious(top);
+    	}
     }
     public void on_change_vertical_cube3(){
 		// myCube3.front

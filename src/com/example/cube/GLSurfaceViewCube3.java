@@ -91,8 +91,9 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
         		originX = e.getX();
         		originY = e.getY();
         		if(originX >290.0f/720*getWidth() && originX < 420.0f/720*getWidth() && originY > 31.0f/1280*getHeight() && originY < 128.0f/1280*getHeight()){
-                	mRenderer.on_change_horizontal_cube3();
-                	mRenderer.rotateLeftCube3("right1");                		
+                	//mRenderer.on_change_horizontal_cube3();
+                	//mRenderer.rotateLeftCube3("right1");   
+        			mRenderer.backToPreviousCube3();
                     requestRender();
         		}   
         		break;
