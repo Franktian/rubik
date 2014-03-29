@@ -1094,134 +1094,7 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
                 	}
                 }
                 
-                
-                /*
-                if (mPreviousY > 500.0f/1280*getHeight() &&dx > 100 && dy < 100 && dy > -100 && mPreviousY <633.3f/1280*getHeight()) {//First Move Right
-                	mRenderer.on_change_horizontal_cube3();
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.rotateRightCube3("right1");
-                }
-                
-                if (mPreviousY > 633.3f/1280*getHeight() &&dx > 100 && dy < 100 && dy > -100 && mPreviousY <766.6f/1280*getHeight()) {//Second Move Right
-                	mRenderer.on_change_horizontal_cube3();
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.rotateRightCube3("right4");
-                }
-                if (mPreviousY > 766.6f/1280*getHeight() &&dx > 100 && dy < 100 && dy > -100 && mPreviousY <900.0f/1280*getHeight()) {//Third Move Right
-                	mRenderer.on_change_horizontal_cube3();
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.rotateRightCube3("right7");
-                }
-                
-                if (mPreviousY > 500.0f/1280*getHeight() &&dx < -100 && dy < 100 && dy >-100 && mPreviousY <633.3f/1280*getHeight()) {//First Move Left
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.on_change_horizontal_cube3();
-                	mRenderer.rotateLeftCube3("right1");
-                }
 
-                if (mPreviousY > 633.3f/1280*getHeight() &&dx < -100 && dy < 100 && dy > -100 && mPreviousY <766.6f/1280*getHeight()) {//Second Move Left
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.on_change_horizontal_cube3();
-                	mRenderer.rotateLeftCube3("right4");
-                }
-                if (mPreviousY > 766.6f/1280*getHeight() &&dx < -100 && dy < 100 && dy > -100 && mPreviousY <900.0f/1280*getHeight()) {//Third Move Left
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.on_change_horizontal_cube3();
-                	mRenderer.rotateLeftCube3("right7");
-                }
-                
-                //First right Move Down	
-                if(dy > 100 && mPreviousX > getWidth()/2 && mPreviousX < getWidth()/2 + 100.0f/720*getWidth() && mPreviousY < 900.0f/1280*getHeight() && mPreviousY > 200.0f/1280*getHeight()){   
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.on_change_horizontal_cube3();
-                	mRenderer.rotateDownCube3("right1");
-                }
-                //Second right Move Down	
-                if(dy > 100 && mPreviousX > getWidth()/2 + 100.0f/720*getWidth() && mPreviousX < getWidth()/2 + 200.0f/720*getWidth() && mPreviousY < 900.0f/1280*getHeight() && mPreviousY > 200.0f/1280*getHeight()){    
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.on_change_horizontal_cube3();
-                	mRenderer.rotateDownCube3("right2");
-                }
-                //Third right Move Down	
-                if(dy > 100 && mPreviousX > getWidth()/2 + 200.0f/720*getWidth()  && mPreviousY < 900.0f/1280*getHeight() && mPreviousY > 200.0f/1280*getHeight()){    
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.on_change_horizontal_cube3();
-                	mRenderer.rotateDownCube3("right3");
-                }
-                //First right Move Up	
-                if(dy < -100 && mPreviousX > getWidth()/2 && mPreviousX < getWidth()/2 + 100.0f/720*getWidth() && mPreviousY < 900.0f/1280*getHeight() && mPreviousY > 200.0f/1280*getHeight()){    
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.on_change_horizontal_cube3();
-                	mRenderer.rotateUpCube3("right1");
-                }
-                //Second right Move Up	
-                if(dy < -100 && mPreviousX > getWidth()/2 + 100.0f/720*getWidth() && mPreviousX < getWidth()/2 + 200.0f/720*getWidth() && mPreviousY < 900.0f/1280*getHeight() && mPreviousY > 200.0f/1280*getHeight()){   
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.on_change_horizontal_cube3();
-                	mRenderer.rotateUpCube3("right2");
-                }
-                //Third right Move Up	
-                if(dy < -100 && mPreviousX > getWidth()/2 + 200.0f/720*getWidth()  && mPreviousY < 900.0f/1280*getHeight() && mPreviousY > 200.0f/1280*getHeight()){    
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.on_change_horizontal_cube3();
-                	mRenderer.rotateUpCube3("right3");
-                }
-                
-
-                //Third left Move Down	
-                if(dy > 100 && mPreviousX > getWidth()/2-100.0f/720*getWidth() && mPreviousX < getWidth()/2 && mPreviousY < 900.0f/1280*getHeight() && mPreviousY > 200.0f/1280*getHeight()){   
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.on_change_vertical_cube3();
-                	mRenderer.rotateDownCube3("front3");
-                }
-                //Second left Move Down	
-                if(dy > 100 && mPreviousX > getWidth()/2 - 200.0f/720*getWidth() && mPreviousX < getWidth()/2 - 100.0f/720*getWidth() && mPreviousY < 900.0f/1280*getHeight() && mPreviousY > 200.0f/1280*getHeight()){    
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.on_change_vertical_cube3();
-                	mRenderer.rotateDownCube3("front2");
-                }
-                //First left Move Down	
-                if(dy > 100 && mPreviousX < getWidth()/2 - 200.0f/720*getWidth()  && mPreviousY < 900.0f/1280*getHeight() && mPreviousY > 200.0f/1280*getHeight()){    
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.on_change_vertical_cube3();
-                	mRenderer.rotateDownCube3("front1");
-                }
-                //First left Move Up	
-                if(dy < -100 && mPreviousX < getWidth()/2 - 200.0f/720*getWidth() && mPreviousY < 900.0f/1280*getHeight() && mPreviousY > 200.0f/1280*getHeight()){    
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.on_change_vertical_cube3();
-                	mRenderer.rotateUpCube3("front1");
-                }
-                //Second left Move Up	
-                if(dy < -100 && mPreviousX > getWidth()/2 - 200.0f/720*getWidth() && mPreviousX < getWidth()/2 - 100.0f && mPreviousY < 900.0f/1280*getHeight() && mPreviousY > 200.0f/1280*getHeight()){   
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.on_change_vertical_cube3();
-                	mRenderer.rotateUpCube3("front2");
-                }
-                //Third left Move Up	
-                if(dy < -100 && mPreviousX > getWidth()/2 - 100.0f/720*getWidth() && mPreviousX < getWidth()/2 && mPreviousY < 900.0f/1280*getHeight() && mPreviousY > 200.0f/1280*getHeight()){    
-                	mPreviousX = e.getX();
-                	mPreviousY = e.getY();
-                	mRenderer.on_change_vertical_cube3();
-                	mRenderer.rotateUpCube3("front3");
-                }*/
                 if(originY >900.0f/1280*getHeight() && dx < -100 && dy < 100){
                 	originX = e.getX();
                 	originY = e.getY();
@@ -1246,27 +1119,11 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
     }
 
     public void onRotateLeft() {
-    	mRenderer.on_change_horizontal_cube3();
-    	for (int i = 0; i < 3; i++) {
-    		// Rotate the colors on the side
-    		mRenderer.rotateLeftCube3("right1");
-    		mRenderer.rotateLeftCube3("right4");
-    		mRenderer.rotateLeftCube3("right7");
-    	}
-    	mRenderer.rotateUpViewLeft3();
-    	mRenderer.rotateDownViewLeft3();
+    	mRenderer.onRotateLeft3();
     }
     
     public void onRotateRight() {
-    	mRenderer.on_change_horizontal_cube3();
-    	for (int i = 0; i < 3; i++) {
-    		// Rotate the colors on the side
-    		mRenderer.rotateRightCube3("right1");
-    		mRenderer.rotateRightCube3("right4");
-    		mRenderer.rotateRightCube3("right7");
-    	}
-    	mRenderer.rotateUpViewRight3();
-    	mRenderer.rotateDownViewRight3();
+    	mRenderer.onRotateRight3();
     }
 
     
@@ -1277,15 +1134,6 @@ public class GLSurfaceViewCube3 extends GLSurfaceView {
     }
     
     public void onRotateUpView () {
-    	mRenderer.on_change_vertical_cube3();
-    	for (int i = 0; i < 6; i++) {
-    		mRenderer.rotateUpCube3("front1");
-    		mRenderer.rotateUpCube3("front2");
-    		mRenderer.rotateUpCube3("front3");
-    	}
-    	mRenderer.rotateRightHalf3();
-    	mRenderer.rotateLeftHalf3();
-    	
-    	onRotateRight();
+    	mRenderer.onRotateUpView3();
     }
 }

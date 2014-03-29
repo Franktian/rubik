@@ -453,7 +453,71 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
     	else 
     		return null;
     }
-    
+    public void onRotateRight3(boolean notRecord) {
+    	this.on_change_horizontal_cube3();
+    	for (int i = 0; i < 3; i++) {
+    		this.rotateRightCube3("right1", true);
+    		this.rotateRightCube3("right4", true);
+    		this.rotateRightCube3("right7", true);
+    	}
+    	this.rotateUpViewRight3();
+    	this.rotateDownViewRight3();
+    }
+    public void onRotateRight3() {
+    	this.on_change_horizontal_cube3();
+    	for (int i = 0; i < 3; i++) {
+    		this.rotateRightCube3("right1", true);
+    		this.rotateRightCube3("right4", true);
+    		this.rotateRightCube3("right7", true);
+    	}
+    	this.rotateUpViewRight3();
+    	this.rotateDownViewRight3();
+    	this.recordRotateView("right");
+    }
+    public void onRotateLeft3(boolean notRecord) {
+    	this.on_change_horizontal_cube3();
+    	for (int i = 0; i < 3; i++) {
+    		this.rotateLeftCube3("right1", true);
+    		this.rotateLeftCube3("right4", true);
+    		this.rotateLeftCube3("right7", true);
+    	}
+    	this.rotateUpViewLeft3();
+    	this.rotateDownViewLeft3();
+    }
+    public void onRotateLeft3() {
+    	this.on_change_horizontal_cube3();
+    	for (int i = 0; i < 3; i++) {
+    		this.rotateLeftCube3("right1", true);
+    		this.rotateLeftCube3("right4", true);
+    		this.rotateLeftCube3("right7", true);
+    	}
+    	this.rotateUpViewLeft3();
+    	this.rotateDownViewLeft3();
+    	this.recordRotateView("left");
+    }
+    public void onRotateUpView3() {
+    	this.on_change_vertical_cube3();
+    	for (int i = 0; i < 6; i++) {
+    		this.rotateUpCube3("front1", true);
+    		this.rotateUpCube3("front2", true);
+    		this.rotateUpCube3("front3", true);
+    	}
+    	this.rotateRightHalf3();
+    	this.rotateLeftHalf3();
+    	this.onRotateRight3(true);
+    	this.recordRotateView("up");
+    }
+    public void onRotateUpView3(boolean notRecord) {
+    	this.on_change_vertical_cube3();
+    	for (int i = 0; i < 6; i++) {
+    		this.rotateUpCube3("front1", true);
+    		this.rotateUpCube3("front2", true);
+    		this.rotateUpCube3("front3", true);
+    	}
+    	this.rotateRightHalf3();
+    	this.rotateLeftHalf3();
+    	this.onRotateRight3(true);
+    }
     public void rotateRightHalf3() {
     	myCube3.rotateRightHalf();
     }
@@ -475,21 +539,38 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
     public void rotateDownViewRight3() {
     	myCube3.rotateDownViewRight();
     }
+    public void rotateRightCube3(String faceToRotate, boolean rotate){
+    	// The signiture indicate that this is being called because of change view
+    	myCube3.rotateRight(faceToRotate);
+    }
     public void rotateRightCube3(String faceToRotate){
     	myCube3.rotateRight(faceToRotate);
     	myCube3.recordMoves(faceToRotate, "right");
     }
 
+    public void rotateLeftCube3(String faceToRotate, boolean rotate){
+    	// The signiture indicate that this is being called because of change view
+    	myCube3.rotateLeft(faceToRotate);
+    }
+    
     public void rotateLeftCube3(String faceToRotate){
     	myCube3.rotateLeft(faceToRotate);
     	myCube3.recordMoves(faceToRotate, "left");
     }
 
+    public void rotateUpCube3(String faceToRotate, boolean rotate){
+    	myCube3.rotateUp(faceToRotate);
+    }
+    
     public void rotateUpCube3(String faceToRotate){
     	myCube3.rotateUp(faceToRotate);
     	myCube3.recordMoves(faceToRotate, "up");
     }
 
+    public void rotateDownCube3(String faceToRotate, boolean rotate){
+    	myCube3.rotateDown(faceToRotate);
+    }
+    
     public void rotateDownCube3(String faceToRotate){
     	myCube3.rotateDown(faceToRotate);
     	myCube3.recordMoves(faceToRotate, "down");
@@ -497,17 +578,30 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
     public void backToPreviousCube3 () {
     	String[] top = myCube3.getTop();
     	if (top != null) {
-    		System.out.println(top[0].substring(0));
-    		if (top[0].substring(0, 1).equals("r") && (top[1].equals("up") || top[1].equals("down"))) {
-    			//System.out.println();
-    			this.on_change_horizontal_cube3();
-    		} else if (top[0].substring(0, 1).equals("f") && (top[1].equals("up") || top[1].equals("down"))) {
-    			this.on_change_vertical_cube3();
+    		//System.out.println(top[0].substring(0));
+    		if (top[0].equals("change")) {
+    			if (top[1].equals("left")) {
+    				this.onRotateRight3(true);
+    			} else if (top[1].equals("right")) {
+    				this.onRotateLeft3(true);
+    			} else if (top[1].equals("up")) {
+    				this.onRotateUpView3(true);
+    			}
     		} else {
-    			this.on_change_horizontal_cube3();
+	    		if (top[0].substring(0, 1).equals("r") && (top[1].equals("up") || top[1].equals("down"))) {
+	    			//System.out.println();
+	    			this.on_change_horizontal_cube3();
+	    		} else if (top[0].substring(0, 1).equals("f") && (top[1].equals("up") || top[1].equals("down"))) {
+	    			this.on_change_vertical_cube3();
+	    		} else {
+	    			this.on_change_horizontal_cube3();
+	    		}
+	    		myCube3.backToPrevious(top);
     		}
-    		myCube3.backToPrevious(top);
     	}
+    }
+    public void recordRotateView (String direction) {
+    	myCube3.recordMoves("change", direction);
     }
     public void on_change_vertical_cube3(){
 		// myCube3.front
