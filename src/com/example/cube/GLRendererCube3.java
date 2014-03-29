@@ -319,7 +319,7 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
         mSquare3_Right_Eight.draw(mMVPMatrix, right_eight_color);
         mSquare3_Right_Nine.draw(mMVPMatrix, right_nine_color);     
       
-        final float [] border_color = { 0.9f, 0.9f, 0.9f, 0.9f }; 
+        final float [] border_color = { 0.0f, 0.0f, 0.0f, 0.0f }; 
         mBorder1.draw(mMVPMatrix,border_color);
         mBorder2.draw(mMVPMatrix,border_color);
         mBorder3.draw(mMVPMatrix,border_color);
