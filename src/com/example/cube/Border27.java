@@ -56,10 +56,10 @@ public class Border27 {
     // number of coordinates per vertex in this array
     static final int COORDS_PER_VERTEX = 3;
     static float squareCoords[] = {
-        0.33333f,  0.33333f, 0.0f,   // top left
-        0.32333f, 0.33333f, 0.0f,   // top right
-        0.33333f, -0.26667f, 0.0f,   //buttom left
-        0.32333f,  -0.26667f, 0.0f }; //buttom right
+        0.25f,  0.3f, 0.0f,   // top left
+        0.24f, 0.3f, 0.0f,   // top right
+        0.25f, -0.3f, 0.0f,   //buttom left
+        0.24f,  -0.3f, 0.0f }; //buttom right
 
     private final short drawOrder[] = { 1, 0, 2, 1, 3, 2}; // order to draw vertices
 
