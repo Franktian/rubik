@@ -33,7 +33,38 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
     private Square_Right_Two mSquare_Right_Two;
     private Square_Right_Three mSquare_Right_Three;
     private Square_Right_Four mSquare_Right_Four;
+    
+    
     //Cube 2
+    
+    // border
+    private Border1 mBorder1;
+	private Border2 mBorder2;
+	private Border3 mBorder3;
+	private Border4 mBorder4;
+	private Border5 mBorder5;
+	private Border6 mBorder6;
+	private Border7 mBorder7;
+	private Border8 mBorder8;
+    private Border9 mBorder9;
+	private Border10 mBorder10;
+	private Border11 mBorder11;
+	private Border12 mBorder12;
+	private Border13 mBorder13;
+	private Border14 mBorder14;
+	private Border15 mBorder15;
+	private Border16 mBorder16;
+	private Border17 mBorder17;
+	private Border18 mBorder18;
+	private Border19 mBorder19;
+	private Border20 mBorder20;
+	private Border21 mBorder21;
+	private Border22 mBorder22;
+	private Border23 mBorder23;
+	private Border24 mBorder24;
+	private Border25 mBorder25;
+	private Border26 mBorder26;
+	private Border27 mBorder27;
     
     // mMVPMatrix is an abbreviation for "Model View Projection Matrix"
     private final float[] mMVPMatrix = new float[16];
@@ -94,17 +125,33 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
         mSquare_Right_Three = new Square_Right_Three();
         mSquare_Right_Four = new Square_Right_Four();
         
-        //1*1 Cube
-        /*
-        myCube.a = new Face("a", "white");
-        myCube.b = new Face("b","red");
-        myCube.c = new Face("c", "blue");
-        myCube.d = new Face("d", "orange");
-        myCube.e = new Face("e", "yellow");
-        myCube.f = new Face("f","green");
-        
-        myCube.initialize(myCube.a, myCube.b, myCube.c, myCube.d, myCube.e, myCube.f);
-       */
+        mBorder1 = new Border1();
+        mBorder2 = new Border2();
+        mBorder3 = new Border3();
+        mBorder4 = new Border4();
+        mBorder5 = new Border5();
+        mBorder6 = new Border6();
+        mBorder7 = new Border7();
+        mBorder8 = new Border8();
+        mBorder9 = new Border9();
+        mBorder10 = new Border10();
+        mBorder11 = new Border11();
+        mBorder12 = new Border12();
+        mBorder13 = new Border13();
+        mBorder14 = new Border14();
+        mBorder15 = new Border15();
+        mBorder16 = new Border16();
+        mBorder17 = new Border17();
+        mBorder18 = new Border18();
+        mBorder19 = new Border19();
+        mBorder20 = new Border20();
+        mBorder21 = new Border21();
+        mBorder22 = new Border22();
+        mBorder23 = new Border23();
+        mBorder24 = new Border24();
+        mBorder25 = new Border25();
+        mBorder26 = new Border26();
+        mBorder27 = new Border27();
 
         myCube2.a1 = new Face3("a1", "white");
 		myCube2.a2 = new Face3("a2", "white");
@@ -196,8 +243,39 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
         mSquare_Right_One.draw(mMVPMatrix, right_one_color);
         mSquare_Right_Two.draw(mMVPMatrix, right_two_color);
         mSquare_Right_Three.draw(mMVPMatrix, right_three_color);
-        mSquare_Right_Four.draw(mMVPMatrix, right_four_color);       
-		
+        mSquare_Right_Four.draw(mMVPMatrix, right_four_color);    
+        
+        final float [] border_color = { 0.0f, 0.0f, 0.0f, 0.0f }; 
+        mBorder1.draw(mMVPMatrix,border_color);
+        //mBorder2.draw(mMVPMatrix,border_color);
+        //mBorder3.draw(mMVPMatrix,border_color);
+        mBorder4.draw(mMVPMatrix,border_color);
+        //mBorder5.draw(mMVPMatrix,border_color);
+	    //mBorder6.draw(mMVPMatrix,border_color);
+	    mBorder7.draw(mMVPMatrix,border_color);
+	    mBorder8.draw(mMVPMatrix,border_color);
+	    mBorder9.draw(mMVPMatrix,border_color);
+	    //mBorder10.draw(mMVPMatrix,border_color);
+	    //mBorder11.draw(mMVPMatrix,border_color);
+	    //mBorder12.draw(mMVPMatrix,border_color);
+	    //mBorder13.draw(mMVPMatrix,border_color);
+        mBorder14.draw(mMVPMatrix,border_color);
+        mBorder15.draw(mMVPMatrix,border_color);
+        mBorder16.draw(mMVPMatrix,border_color);
+        mBorder17.draw(mMVPMatrix,border_color);
+        
+        // This four are the top inside four
+        //mBorder18.draw(mMVPMatrix,border_color);
+        //mBorder19.draw(mMVPMatrix,border_color);
+	    //mBorder20.draw(mMVPMatrix,border_color);
+		//mBorder21.draw(mMVPMatrix,border_color);
+        
+        mBorder22.draw(mMVPMatrix,border_color);
+		mBorder23.draw(mMVPMatrix,border_color);
+		mBorder24.draw(mMVPMatrix,border_color);
+		mBorder25.draw(mMVPMatrix,border_color);
+		mBorder26.draw(mMVPMatrix,border_color);
+		mBorder27.draw(mMVPMatrix,border_color);
     }
 
     @Override
@@ -346,9 +424,42 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
     	myCube2.rotateDownViewRight();
     }
     
-    public void random2 () {
-    	myCube2.random();
+    public void onRotateLeft2 () {
+    	this.on_change_horizontal_cube2();
+    	for (int i = 0; i < 2; i++) {
+    		this.rotateLeftCube2("b1");
+    		this.rotateLeftCube2("b3");
+    	}
+    	this.rotateUpViewLeft2();
+    	this.rotateDownViewLeft2();
     }
+    
+    public void onRotateRight2 () {
+    	this.on_change_horizontal_cube2();
+    	for (int i = 0; i < 2; i++) {
+    		this.rotateRightCube2("b1");
+    		this.rotateRightCube2("b3");
+    	}
+    	this.rotateUpViewRight2();
+    	this.rotateDownViewRight2();
+    }
+    public void rotateRightHalf2 () {
+    	myCube2.rotateRightHalf();
+    }
+    public void rotateLeftHalf2 () {
+    	myCube2.rotateLeftHalf();
+    }
+    public void onRotateUpView2 () {
+    	this.on_change_vertical_cube2();
+    	for (int i = 0; i < 4; i++) {
+    		this.rotateUpCube2("a1");
+    		this.rotateUpCube2("a2");
+    	}
+    	this.rotateRightHalf2();
+    	this.rotateLeftHalf2();
+    	this.onRotateRight2();
+    }
+    
     public void on_change_vertical_left(){
     	myCube.a.setAdj(myCube.c, myCube.f, myCube.d, myCube.b); // white
     	myCube.b.setAdj(myCube.f, myCube.c, myCube.e, myCube.a); // red

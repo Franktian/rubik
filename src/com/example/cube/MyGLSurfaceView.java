@@ -470,85 +470,22 @@ public class MyGLSurfaceView extends GLSurfaceView {
             			mPreviousX = e.getY();
             		}
                 }
-               /* if (mPreviousY > 700.0f &&dx > 100 && dy < 100 && dy > -100 && mPreviousY <900.0f) {//Move Right
-              //  	mRenderer.on_change_horizontal();
-        		//	mRenderer.rotateLeft('b');
-                	mRenderer.on_change_horizontal_cube2();
-                	mRenderer.rotateRightCube2("b3");
-                }
-
-                if (mPreviousY > 700.0f &&dx < -100 && dy < 100 && dy >-100 && mPreviousY <900.0f) {//Move Left
-               // 	mRenderer.on_change_horizontal();
-                //	mRenderer.rotateRight('b');		
-                	mRenderer.on_change_horizontal_cube2();
-                	mRenderer.rotateLeftCube2("b3");
-                }
-
-                if (mPreviousY > 500.0f &&dx > 100 && dy < 100  && dy > -100 && mPreviousY <700.0f) {//Move Right
-              //  	mRenderer.on_change_horizontal();
-        		//	mRenderer.rotateLeft('b');
-                	mRenderer.on_change_horizontal_cube2();
-                	mRenderer.rotateRightCube2("b1");
-                }
-
-                if (mPreviousY > 500.0f &&dx < -100 && dy <100 && dy > -100 && mPreviousY <700.0f) {//Move Left
-               // 	mRenderer.on_change_horizontal();
-                //	mRenderer.rotateRight('b');		
-                	mRenderer.on_change_horizontal_cube2();
-                	mRenderer.rotateLeftCube2("b1");
-                }
                 
-                if(dy > 100 && mPreviousX > 500.0f && mPreviousY < 900.0f && mPreviousY > 200.0f){    //On right Move Down right
-               // 	mRenderer.on_change_horizontal();
-                //	mRenderer.rotateUp('c');	
-                	mRenderer.on_change_horizontal_cube2();
-                	mRenderer.rotateDownCube2("b2");
+                if(mPreviousY > 900.0f/1280*getHeight() && dx < -100 && dy < 100){
+                	mPreviousX = e.getX();
+                	mPreviousY = e.getY();
+                	onRotateLeft();
                 }
-                if(dy < -100 && mPreviousX > 500.0f && mPreviousY < 900.0f && mPreviousY > 200.0f){	//On right Move Up right 
-               //  	mRenderer.on_change_horizontal();
-               // 	mRenderer.rotateDown('c');		 
-                	mRenderer.on_change_horizontal_cube2();
-                	mRenderer.rotateUpCube2("b2");
+                if(mPreviousY > 900.0f/1280*getHeight() && dx >100 && dy < 100){
+                	mPreviousX = e.getX();
+                	mPreviousY = e.getY();
+                	onRotateRight();
                 }
-                if((dy > 100 && mPreviousX < 500.0f && mPreviousX > getWidth()/2 && mPreviousY < 900.0f && mPreviousY > 300.0f)){    //On right Move Down
-               // 	mRenderer.on_change_horizontal();
-                //	mRenderer.rotateUp('c');	
-                	mRenderer.on_change_horizontal_cube2();
-                	mRenderer.rotateDownCube2("b1");
+                if(mPreviousY > 900.0f/1280*getHeight() && dy < -100 && dx < 100 && dx >-100){
+                	mPreviousX = e.getX();
+                	mPreviousY = e.getY();
+                	onRotateUpView();
                 }
-                if(dy < -100 && mPreviousX < 500.0f && mPreviousX > getWidth()/2 && mPreviousY < 900.0f && mPreviousY > 300.0f){	//On right Move Up
-               //  	mRenderer.on_change_horizontal();
-               // 	mRenderer.rotateDown('c');		 
-                	mRenderer.on_change_horizontal_cube2();
-                	mRenderer.rotateUpCube2("b1");
-                }
-                
-                if(dy > 100 && mPreviousX < 200.0f  && mPreviousY < 900.0f && mPreviousY > 200.0f){	//On Left Move Up
-                //	mRenderer.on_change_vertical_left();
-               // 	mRenderer.rotateDown('a');		 
-                	mRenderer.on_change_vertical_cube2();
-                	mRenderer.rotateDownCube2("a1");
-                }
-                if(dy < -100 && mPreviousX < 200.0f && mPreviousY < 900.0f && mPreviousY > 200.0f){ //On Left Move Down
-             //    	mRenderer.on_change_vertical_left();
-              //  	mRenderer.rotateUp('a');	
-                	mRenderer.on_change_vertical_cube2();
-                	mRenderer.rotateUpCube2("a1");
-                }
-               
-                if(dy > 100 && mPreviousX < getWidth()/2 && mPreviousX > 200.0f && mPreviousY < 900.0f && mPreviousY > 200.0f){	//On Left Move Up
-                //	mRenderer.on_change_vertical_left();
-               // 	mRenderer.rotateDown('a');		 
-                	mRenderer.on_change_vertical_cube2();
-                	mRenderer.rotateDownCube2("a2");
-                }
-                if(dy < -100 && mPreviousX < getWidth()/2 && mPreviousX > 200.0f && mPreviousY < 900.0f && mPreviousY > 200.0f){ //On Left Move Down
-             //    	mRenderer.on_change_vertical_left();
-              //  	mRenderer.rotateUp('a');	
-                	mRenderer.on_change_vertical_cube2();
-                	mRenderer.rotateUpCube2("a2");
-                } */
-				
                 requestRender();
                 break;
         }
@@ -557,31 +494,15 @@ public class MyGLSurfaceView extends GLSurfaceView {
     }
     
     public void onRotateLeft () {
-    	for (int i = 0; i < 2; i++) {
-    		mRenderer.rotateLeftCube2("a1");
-    		mRenderer.rotateLeftCube2("a3");
-    	}
-    	mRenderer.rotateUpViewLeft2();
-    	mRenderer.rotateDownViewLeft2();
-    	
-    	requestRender();
+    	mRenderer.onRotateLeft2();
     }
+    
     
     public void onRotateRight () {
-    	for (int i = 0; i < 2; i++) {
-    		mRenderer.rotateRightCube2("a1");
-    		mRenderer.rotateRightCube2("a3");
-    	}
-    	mRenderer.rotateUpViewRight2();
-    	mRenderer.rotateUpViewRight2();
-    	
-    	requestRender();
+    	mRenderer.onRotateRight2();
     }
     
-    public void onRandom () {
-    	mRenderer.random2();
-    	
-    	requestRender();
+    public void onRotateUpView () {
+    	mRenderer.onRotateUpView2();
     }
-
 }

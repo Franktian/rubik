@@ -524,9 +524,6 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
     public void rotateLeftHalf3() {
     	myCube3.rotateLeftHalf();
     }
-    public void random3 () {
-    	myCube3.random();
-    }
     public void rotateUpViewLeft3() {
     	myCube3.rotateUpViewLeft();
     }
