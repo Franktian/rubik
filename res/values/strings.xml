@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Cube</string>
+    <string name="app_name">One Cube</string>
     <string name="start_instruction"> Welcome to\n \nRubiks Cube!</string>
     <string name="cube2_button">Cube2</string>
     <string name="cube3_button">Cube3</string>

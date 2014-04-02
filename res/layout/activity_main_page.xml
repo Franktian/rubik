@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".MainPageActivity" >
-    <com.example.cube.MyGLSurfaceView
+    <com.onecube.MyGLSurfaceView
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent"
 	 />
