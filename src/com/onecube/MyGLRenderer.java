@@ -189,6 +189,13 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 				myCube2.a4,myCube2.b4,myCube2.c4,myCube2.d4,myCube2.e4,myCube2.f4
 			};
 		myCube2.initialize(face_array);
+
+		int rand = (int) Math.floor(Math.random()*100);
+    	on_change_vertical_cube2();
+    	myCube2.verticalrandom(rand);
+    	rand = (int) Math.floor(Math.random()*100);
+    	on_change_horizontal_cube2();
+    	myCube2.horizontalrandom(rand);
 		
     }
 

@@ -237,8 +237,12 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
 				myCube3.front9,myCube3.back9,myCube3.left9,myCube3.right9,myCube3.up9,myCube3.down9
 			};
 		myCube3.initialize(face_array);
+		int rand = (int) Math.floor(Math.random()*100);
+    	on_change_vertical_cube3();
+    	myCube3.verticalrandom(rand);
+    	rand = (int) Math.floor(Math.random()*100);
     	on_change_horizontal_cube3();
-
+    	myCube3.horizontalrandom(rand);
     }
 
     @Override
@@ -575,7 +579,6 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
     public void backToPreviousCube3 () {
     	String[] top = myCube3.getTop();
     	if (top != null) {
-    		//System.out.println(top[0].substring(0));
     		if (top[0].equals("change")) {
     			if (top[1].equals("left")) {
     				this.onRotateRight3(true);
@@ -586,7 +589,6 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
     			}
     		} else {
 	    		if (top[0].substring(0, 1).equals("r") && (top[1].equals("up") || top[1].equals("down"))) {
-	    			//System.out.println();
 	    			this.on_change_horizontal_cube3();
 	    		} else if (top[0].substring(0, 1).equals("f") && (top[1].equals("up") || top[1].equals("down"))) {
 	    			this.on_change_vertical_cube3();
