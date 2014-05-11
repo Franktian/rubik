@@ -64,6 +64,63 @@ public class Cube2 {
 
 	}
 	
+	public void verticalrandom(int count){
+		if(count<=0){
+			return;
+		}else{
+			int index = (int) Math.floor(Math.random()*4);
+			switch(index){
+			case 0:
+				this.rotateUp("a1");
+				break;
+			case 1:
+				this.rotateUp("a2");
+				break;
+			case 2:
+				this.rotateDown("a1");
+				break;
+			case 3:
+				this.rotateDown("a2");
+				break;
+			}
+			verticalrandom(--count);
+		}		
+	}
+	public void horizontalrandom(int count){
+		if(count<=0){
+			return;
+		}else{
+			int index = (int) Math.floor(Math.random()*8);
+			switch(index){
+			case 0:
+				this.rotateLeft("b1");
+				break;
+			case 1:
+				this.rotateLeft("b3");
+				break;
+			case 2:
+				this.rotateRight("b1");
+				break;
+			case 3:
+				this.rotateRight("b3");
+				break;
+			case 4:
+				this.rotateUp("b1");
+				break;
+			case 5:
+				this.rotateUp("b2");
+				break;
+			case 6:
+				this.rotateDown("b1");
+				break;
+			case 7:
+				this.rotateDown("b2");
+				break;
+			}
+			horizontalrandom(--count);
+		}		
+	}
+	
 	public void rotateLeft(String faceToRotate){
 		if(faceToRotate.equals("b3"))
 			this.b3.rotateLeft();

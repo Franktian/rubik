@@ -1,5 +1,5 @@
 package com.onecube;
-import java.util.*;
+import java.util.Stack;
 
 public class Cube3 {
 	public Face3 front1 = new Face3();
@@ -161,6 +161,85 @@ public class Cube3 {
 		this.up9 = face_array[52];
 		this.down9 = face_array[53];
 
+	}
+	
+	public void horizontalrandom(int count){
+		//rotate left or Right
+		// rotate up or down "right"
+		if(count<=0){
+			return;
+		}else{
+			int index = (int) Math.floor(Math.random()*12);
+			switch(index){
+			case 0:
+				this.rotateLeft("right1");
+				break;
+			case 1:
+				this.rotateLeft("right4");
+				break;
+			case 2:
+				this.rotateLeft("right7");
+				break;
+			case 3:
+				this.rotateRight("right1");
+				break;
+			case 4:
+				this.rotateRight("right4");
+				break;
+			case 5:
+				this.rotateRight("right7");
+				break;
+			case 6:
+				this.rotateUp("right1");
+				break;
+			case 7:
+				this.rotateUp("right2");
+				break;
+			case 8:
+				this.rotateUp("right3");
+				break;
+			case 9:
+				this.rotateDown("right1");
+				break;
+			case 10:
+				this.rotateDown("right2");
+				break;
+			case 11:
+				this.rotateDown("right3");
+				break;
+			}
+			horizontalrandom(--count);
+		}
+		
+	}
+	
+	public void verticalrandom(int count){
+		if(count<=0){
+			return;
+		}else{
+			int index = (int) Math.floor(Math.random()*12);
+			switch(index){
+			case 0:
+				this.rotateUp("front1");
+				break;
+			case 1:
+				this.rotateUp("front2");
+				break;
+			case 2:
+				this.rotateUp("front3");
+				break;
+			case 3:
+				this.rotateDown("front1");
+				break;
+			case 4:
+				this.rotateDown("front2");
+				break;
+			case 5:
+				this.rotateDown("front3");
+				break;
+			}
+			verticalrandom(--count);
+		}
 	}
 	
 	public void rotateLeft(String faceToRotate){
