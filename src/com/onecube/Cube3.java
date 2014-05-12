@@ -75,6 +75,11 @@ public class Cube3 {
 		String [] record = {facdId, direction};
 		this.moves.push(record);
 	}
+	public void clear(){
+		while (!this.moves.empty()) {
+			 this.moves.pop();
+		}				
+	}
 	public String[] getTop () {
 		if (!this.moves.empty()) {
 			return this.moves.pop();

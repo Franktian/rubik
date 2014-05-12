@@ -243,6 +243,7 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
     	rand = (int) Math.floor(Math.random()*100);
     	on_change_horizontal_cube3();
     	myCube3.horizontalrandom(rand);
+    	myCube3.clear();
     }
 
     @Override
@@ -599,7 +600,7 @@ public class GLRendererCube3 implements GLSurfaceView.Renderer {
     		}
     	}
     }
-    public void recordRotateView (String direction) {
+    public void recordRotateView (String direction) { 
     	myCube3.recordMoves("change", direction);
     }
     public void on_change_vertical_cube3(){
